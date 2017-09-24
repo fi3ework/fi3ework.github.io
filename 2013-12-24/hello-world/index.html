@@ -156,6 +156,23 @@
 
 
     
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        id: "Hello World", // 可选。默认为 location.href
+        owner: 'fi3ework',
+        repo: 'fi3ework.github.io',
+        oauth: {
+            client_id: '173b36b0a164e0d952c9',
+            client_secret: '615a76cab99505a9bc66269569475cf9447a3272',
+        },
+    })
+    gitment.render('container')
+
+</script>
+
 </main>
             <!-- profile -->
             
@@ -211,6 +228,8 @@
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-archive">
     <!-- 在ejs中将archive按照时间排序 -->
+    
+    
     
     
     
@@ -561,6 +580,11 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/excerpts/" >Excerpts</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/tag-plugins/" >Tag Plugins</a>
         </li>
     
@@ -571,22 +595,17 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/excerpts/" >Excerpts</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/gallery-post/" >Gallery Post</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title的副本/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
         </li>
     
     
@@ -596,7 +615,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post/" >Link Post</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/elements/" >Elements</a>
         </li>
     
     
@@ -611,7 +630,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post/" >Link Post</a>
         </li>
     
     
@@ -621,12 +640,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/elements/" >Elements</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title的副本/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
         </li>
     
     
@@ -651,9 +670,9 @@
     
         <span class="sidebar-tag-name"><a href= "#">语言测试</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">中文</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">日本語</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">中文</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
