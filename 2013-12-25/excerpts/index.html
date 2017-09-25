@@ -167,24 +167,26 @@
 
     <!-- 来必力City版安装代码 -->
 
-    <div id="lv-container" data-id="city" data-uid= MTAyMC8yODQyOS81MDAw>
-        <script type="text/javascript">
-            (function (d, s) {
-                var j, e = d.getElementsByTagName(s)[0];
-                if (typeof LivereTower === 'function') { return; }
-                j = d.createElement(s);
-                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-                j.async = true;
-
-                e.parentNode.insertBefore(j, e);
-            })(document, 'script');
-        </script>
-        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
-    </div>
-
 <!-- City版安装代码已完成 -->
     
     
+<div id="container"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+        // id: "Excerpts", // 可选。默认为 location.href
+        owner: 'fi3ework',
+        repo: 'fi3ework.github.io',
+        oauth: {
+            client_id: '173b36b0a164e0d952c9',
+            client_secret: '615a76cab99505a9bc66269569475cf9447a3272',
+        },
+    })
+    gitment.render('container')
+
+</script>
+
     <!--PC版-->
 
     
@@ -592,7 +594,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos的副本/" >Videos</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/excerpts/" >Excerpts</a>
         </li>
     
     
@@ -607,22 +614,22 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/excerpts/" >Excerpts</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/gallery-post/" >Gallery Post</a>
         </li>
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos的副本/" >Videos</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title的副本/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/categories/" >Categories</a>
         </li>
     
     
@@ -637,7 +644,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags/" >Tags</a>
         </li>
     
     
@@ -647,22 +654,17 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags/" >Tags</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post/" >Link Post</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/categories/" >Categories</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
         </li>
     
     
