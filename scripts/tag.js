@@ -72,23 +72,54 @@ var initTag = function initTag() {
     $('.sidebar-tags-name:first').on('click', function (event) {
         event.preventDefault();
         var realTarget = event.target;
-        var realTagName = void 0;
         // 点击大框可显示对应tag的文章
         if (this.compareDocumentPosition(realTarget) & 16) {
+            // 确定tagName
             if (realTarget.tagName === 'SPAN') {
                 this.currTagName = realTarget.firstChild.innerHTML;
             } else {
                 this.currTagName = realTarget.innerHTML;
             }
         }
-        realTagName = this.currTagName;
 
-        var indexs = tagMap.get(realTagName);
+        // 判断是否存在对应tag
+        var indexs = tagMap.get(this.currTagName);
         if (!indexs) {
             return;
         }
+
+        // 设置当前选中的tag的样式
+        $(this).find('.sidebar-tag-name-focus').removeClass('sidebar-tag-name-focus');
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+            for (var _iterator = this.children[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                var child = _step.value;
+
+                if (this.currTagName === child.firstChild.innerHTML) {
+                    child.classList.add('sidebar-tag-name-focus');
+                }
+            }
+
+            // 显示tag对应的文章列表
+        } catch (err) {
+            _didIteratorError = true;
+            _iteratorError = err;
+        } finally {
+            try {
+                if (!_iteratorNormalCompletion && _iterator.return) {
+                    _iterator.return();
+                }
+            } finally {
+                if (_didIteratorError) {
+                    throw _iteratorError;
+                }
+            }
+        }
+
         var indexsArr = indexs.split(',');
-        // append lists
         var frag = document.createDocumentFragment(),
             postList = document.getElementsByClassName('sidebar-tag-list')[0];
         postList.innerHTML = '';
