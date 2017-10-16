@@ -119,7 +119,22 @@
 </div>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <script>
-            // console.log('webfont-loader')
+            function fontLoaded(){
+                console.log('font loaded');
+                if (document.getElementsByClassName('site-intro-meta')) {
+                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+                    let postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
+                    if (postIntroTags) {
+                        postIntroTags.classList.add('post-fade-in');
+                    }
+                    if (postIntroMeat) {
+                        postIntroMeat.classList.add('post-fade-in');
+                    }
+                }
+            }
+
             WebFont.load({
                 custom: {
                     families: ['Oswald-Regular']
@@ -128,24 +143,13 @@
                     // console.log('loading');
                 },
                 active: function () {  //所有字体已渲染
-                    console.log('active');
-                    if (document.getElementsByClassName('site-intro-meta')) {
-                        document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-                        document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-                        let postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
-                            postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
-                        if(postIntroTags){
-                            postIntroTags.classList.add('post-fade-in');
-                        }
-                        if (postIntroMeat) {
-                            postIntroMeat.classList.add('post-fade-in');
-                        }
-                    }
+                    fontLoaded();
                 },
                 inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-                    // console.log('inactive');
+                    console.log('inactive: timeout');
+                    fontLoaded();
                 },
-                timeout: 20000 // Set the timeout to two seconds
+                timeout: 15000 // Set the timeout to two seconds
             });
         </script>
         <div class="container container-unloaded">
@@ -158,17 +162,17 @@
     <ul class="post-pager">
         
             <li class="next">
-                <a href= "/2013-12-24/link-post的副本/" title= Link Post >
+                <a href= "/2013-12-24/categories/" title= Categories >
                     <span>Next Post</span>
-                    <span>Link Post</span>
+                    <span>Categories</span>
                 </a>
             </li>
         
         
             <li class="previous">
-                <a href= "/2013-12-24/tags的副本/" title= Tags >
+                <a href= "/2013-12-24/link-post的副本/" title= Link Post >
                     <span>Previous Post</span>
-                    <span>Tags</span>
+                    <span>Link Post</span>
                 </a>
             </li>
         
@@ -603,6 +607,12 @@
     
     
     
+    
+    
+    
+    
+    
+    
     <div class="total-archive"> Total : 22 </div>
     
     <div class="post-archive">
@@ -644,17 +654,12 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/no-title的副本/" >[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/no-title/" >[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/no-title的副本/" >[Untitled Post]</a>
         </li>
     
     
@@ -664,17 +669,17 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/gallery-post/" >Gallery Post</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/tag-plugins的副本/" >Tag Plugins</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/excerpts/" >Excerpts</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/gallery-post/" >Gallery Post</a>
         </li>
     
     
@@ -684,7 +689,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title的副本/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/excerpts/" >Excerpts</a>
         </li>
     
     
@@ -699,12 +704,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post-without-title/" >www.google.com</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags/" >Tags</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
         </li>
     
     
@@ -714,7 +714,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags/" >Tags</a>
         </li>
     
     
@@ -724,7 +724,17 @@
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title的副本/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/categories/" >Categories</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post-without-title/" >www.google.com</a>
         </li>
     
     
