@@ -92,7 +92,7 @@ var initTag = function initTag() {
         $(this).find('.sidebar-tag-name-focus').removeClass('sidebar-tag-name-focus');
         var children = this.children;
         for (var i = 0; i < children.length; i++) {
-            if (this.currTagName === children[i].innerHTML) {
+            if (this.currTagName === children[i].firstChild.innerHTML) {
                 children[i].classList.add('sidebar-tag-name-focus');
             }
         }
