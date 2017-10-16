@@ -12,21 +12,21 @@
     <!-- TODO: 在font-face加载完毕后改变字体  -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>
-        console.log('webfont-loader')
+        // console.log('webfont-loader')
         WebFont.load({
             custom: {
                 families: ['Oswald-Regular']
             },
             loading: function() {  //所有字体开始加载
-                console.log('loading');
+                // console.log('loading');
             },
             active: function () {  //所有字体已渲染
-                console.log('active');
+                // console.log('active');
             }, 
             inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-                console.log('inactive');
+                // console.log('inactive');
             },
-            
+            timeout: 20000 // Set the timeout to two seconds
         });
     </script>
     <!-- 提前加载place holder  -->
@@ -59,7 +59,7 @@
         }
     }
 </style>
-    <link rel="stylesheet" href = /css/style.css?v=20171005 />
+    <link rel="stylesheet" href = /css/style.css?v=20171016 />
     <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
     
     <script src="/scripts/main.js" defer></script>
@@ -682,6 +682,10 @@ ParagraphLorem ipsum dolor sit amet, test link consectetur adipiscing elit. St..
     
     
     
+    
+    
+    
+    
     <div class="total-archive"> Total : 22 </div>
     
     <div class="post-archive">
@@ -733,7 +737,7 @@ ParagraphLorem ipsum dolor sit amet, test link consectetur adipiscing elit. St..
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos的副本/" >Videos</a>
         </li>
     
     
@@ -748,7 +752,7 @@ ParagraphLorem ipsum dolor sit amet, test link consectetur adipiscing elit. St..
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/gallery-post/" >Gallery Post</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
         </li>
     
     
@@ -758,12 +762,12 @@ ParagraphLorem ipsum dolor sit amet, test link consectetur adipiscing elit. St..
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos的副本/" >Videos</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/gallery-post/" >Gallery Post</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title的副本/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
         </li>
     
     
@@ -793,12 +797,12 @@ ParagraphLorem ipsum dolor sit amet, test link consectetur adipiscing elit. St..
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title的副本/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
         </li>
     
     
@@ -828,9 +832,9 @@ ParagraphLorem ipsum dolor sit amet, test link consectetur adipiscing elit. St..
     
         <span class="sidebar-tag-name"><a href= "#">语言测试</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">中文</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">日本語</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">中文</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
