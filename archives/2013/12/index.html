@@ -8,14 +8,14 @@
         fi3ework&#39;s Studio
         
     </title>
-    <link rel="icon" href= /assests/favicon.ico>
-    <!-- 提前加载place holder  -->
+    <link rel="icon" href= /assets/favicon.ico>
+    <!-- TODO: 在font-face加载完毕后改变字体  -->
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <!-- <script>
+    <script>
         console.log('webfont-loader')
         WebFont.load({
             custom: {
-                families: ['Oswald-Regular', 'Source Sans Pro', 'Source Code Pro']
+                families: ['Oswald-Regular']
             },
             loading: function() {  //所有字体开始加载
                 console.log('loading');
@@ -28,8 +28,16 @@
             },
             
         });
-    </script> -->
+    </script>
+    <!-- 提前加载place holder  -->
     <style type="text/css">
+        @font-face {
+            font-family: 'Oswald-Regular';
+            src: url('/font/Oswald-Regular.ttf');
+        }
+    </style>
+    <style type="text/css">
+        
         .site-intro-placeholder {
             position: absolute;
             z-index: -2;
@@ -40,40 +48,15 @@
             background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
             background-position: center center;
             transform: translate3d(-226px, 0, 0);
-            animation: gradient-move 2s ease-out 0s 1;
+            animation: gradient-move 2.5s ease-out 0s 1;
         }
         @keyframes gradient-move {
         0% {
             transform: translate3d(-226px, 0, 0);
         }
-        99% {
+        100% {
             transform: translate3d(0, 0, 0);
         }
-        99.1% {
-            transform: translate3d(-226px, 0, 0);
-        }
-        100% {
-            transform: translate3d(-226px, 0, 0);
-        }
-    }
-
-    @font-face {
-        font-family: 'Oswald-Regular';
-        src: url('/font/Oswald-Regular.ttf');
-    }
-
-    @font-face {
-        font-family: 'Source Sans Pro';
-        src: url('/font/Source Sans Pro.woff');
-        font-weight: normal;
-        font-style: normal;
-    }
-
-    @font-face {
-        font-family: 'Source Code Pro';
-        src: url('/font/SourceCodePro-Regular.ttf.woff');
-        font-weight: normal;
-        font-style: normal;
     }
 </style>
     <link rel="stylesheet" href = /css/style.css?v=20171005 />
@@ -81,6 +64,16 @@
     
     <script src="/scripts/main.js" defer></script>
     <!-- 百度统计  -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
     
     <!-- 谷歌统计  -->
     
@@ -413,7 +406,7 @@ David Levithan...
     
         
             
-                <a href="emailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
+                <a href="emailto:805843200@qq.com" class="iconfont-archer email" title=email ></a>
             
         
     
@@ -423,6 +416,52 @@ David Levithan...
             
         
     
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer weibo" target="_blank" title="weibo"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer zhihu" target="_blank" title="zhihu"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer facebook" target="_blank" title="facebook"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer twitter" target="_blank" title="twitter"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer instagram" target="_blank" title="instagram"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer stack-overflow" target="_blank" title="stack-overflow"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer linkedin" target="_blank" title="linkedin"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/fi3ework" class="iconfont-archer others" target="_blank" title="others"></a>
+            
         
     
         
@@ -440,6 +479,11 @@ David Levithan...
     </div>
     <!-- 不蒜子  -->
     
+    <div class="busuanzi-container">
+        <span id="busuanzi_container_site_pv">Welcome, No. <span id="busuanzi_value_site_pv"></span> visitor.
+        </span>
+    </div>
+    
 </footer>
     </div>
     <!-- toc -->
@@ -455,16 +499,6 @@ David Levithan...
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-archive">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
     
     
@@ -800,12 +834,27 @@ David Levithan...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/no-title/" >[Untitled Post]</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/no-title的副本/" >[Untitled Post]</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/no-title/" >[Untitled Post]</a>
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/tag-plugins/" >Tag Plugins</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/tag-plugins的副本/" >Tag Plugins</a>
         </li>
     
     
@@ -820,57 +869,7 @@ David Levithan...
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/tag-plugins的副本/" >Tag Plugins</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/tag-plugins/" >Tag Plugins</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos/" >Videos</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">12/25</span><a class="archive-post-title" href= "/2013-12-25/videos的副本/" >Videos</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/elements/" >Elements</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post-without-title/" >www.google.com</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/categories/" >Categories</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags/" >Tags</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags的副本/" >Tags</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post/" >Link Post</a>
         </li>
     
     
@@ -880,7 +879,42 @@ David Levithan...
     
     
         <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/categories/" >Categories</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post-without-title/" >www.google.com</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post/" >Link Post</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags的副本/" >Tags</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/tags/" >Tags</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
             <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/long-title/" >Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam justo turpis, tincidunt ac convallis id.</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/link-post的副本/" >Link Post</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/24</span><a class="archive-post-title" href= "/2013-12-24/elements/" >Elements</a>
         </li>
     
     
@@ -946,6 +980,8 @@ jsonContent:
     }
 </script>
     <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
     <!-- CNZZ统计  -->
     
