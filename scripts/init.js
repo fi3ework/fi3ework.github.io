@@ -17,4 +17,11 @@ var init = function init() {
     img.src = bgURL;
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('DOMContentLoaded');
+    document.getElementsByClassName('container')[0].classList.remove('container-unloaded');
+    document.getElementsByClassName('footer')[0].classList.remove('footer-unloaded');
+    document.getElementsByClassName('loading')[0].style.display = 'none';
+}, false);
+
 exports.init = init;
