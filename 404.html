@@ -10,7 +10,7 @@
     </title>
     <link rel="icon" href= /assets/favicon.ico>
     <!-- TODO: 在font-face加载完毕后改变字体  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/webfont/1.6.28/webfontloader.js"></script>
+
     <!-- 提前加载place holder  -->
     <style type="text/css">
         @font-face {
@@ -100,67 +100,6 @@
     </div>
 </div>
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-        <script>
-
-            var browser = {
-                    versions: function () {
-                        var u = window.navigator.userAgent;
-                        return {
-                            trident: u.indexOf('Trident') > -1, //IE内核
-                            presto: u.indexOf('Presto') > -1, //opera内核
-                            webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-                            gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
-                            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-                            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-                            android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-                            iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
-                            iPad: u.indexOf('iPad') > -1, //是否为iPad
-                            webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
-                            weixin: u.indexOf('MicroMessenger') == -1 //是否为微信浏览器
-                        };
-                    }()
-                }
-
-            function fontLoaded(){
-                console.log('font loaded');
-                if (document.getElementsByClassName('site-intro-meta')) {
-                    document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
-                    document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-                    let postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
-                        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
-                    if (postIntroTags) {
-                        postIntroTags.classList.add('post-fade-in');
-                    }
-                    if (postIntroMeat) {
-                        postIntroMeat.classList.add('post-fade-in');
-                    }
-                }
-            }
-
-            console.log("android:" + browser.versions.android);
-            console.log("mobile:" + browser.versions.mobile);
-            console.log("webKit:" + browser.versions.android);
-            if (browser.versions.android) {
-                fontLoaded();
-            }
-
-            WebFont.load({
-                custom: {
-                    families: ['Oswald-Regular']
-                },
-                loading: function () {  //所有字体开始加载
-                    // console.log('loading');
-                },
-                active: function () {  //所有字体已渲染
-                    fontLoaded();
-                },
-                inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
-                    console.log('inactive: timeout');
-                    fontLoaded();
-                },
-                timeout: 10000 // Set the timeout to two seconds
-            });
-        </script>
         <div class="container container-unloaded">
             <!-- 不可以删除，否则会调用post的layout  -->
 
