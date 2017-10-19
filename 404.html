@@ -118,18 +118,17 @@
                             iPad: u.indexOf('iPad') > -1, //是否为iPad
                             webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
                             weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
-                            uc: u.indexOf('UCBrowser') > -1 //是否为UC浏览器
+                            uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
                         };
                     }()
                 }
 
-            console.log("is UC:" + browser.versions.userAgent);
             function fontLoaded(){
                 console.log('font loaded');
                 if (document.getElementsByClassName('site-intro-meta')) {
                     document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
                     document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-                    let postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
+                    var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
                         postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
                         if (postIntroTags) {
                             postIntroTags.classList.add('post-fade-in');
@@ -146,7 +145,6 @@
                 console.log("UCBrowser");
                 fontLoaded();
             } else {
-                console.log("NOT UCBrowser");
                 WebFont.load({
                     custom: {
                         families: ['Oswald-Regular']
@@ -161,7 +159,7 @@
                         console.log('inactive: timeout');
                         fontLoaded();
                     },
-                    timeout: 10000 // Set the timeout to two seconds
+                    timeout: 7000 // Set the timeout to two seconds
                 });
             }
         </script>
