@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>AJAX跨域请求分析 | firework's Studio</title><meta name="description" content="AJAX跨域请求分析 - Wee"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/theme.css"><link rel="search" type="application/opensearchdescription+xml" href="/atom.xml" title="firework's Studio"></head><body><div class="wrap"><header><h1 class="branding"><a href="/" title="firework's Studio">firework's Studio</a></h1><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">HOME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/archives" target="_self">ARCHIVES</a></li><li class="nav-list-item"><a class="nav-list-link" href="//github.com/fi3ework" target="_self">GITHUB</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">AJAX跨域请求分析</h1><div class="post-info"><a></a>2017-05-27</div><div class="post-content"><h2 id="AJAX跨域请求分析"><a href="#AJAX跨域请求分析" class="headerlink" title="AJAX跨域请求分析"></a>AJAX跨域请求分析</h2><h3 id="引出"><a href="#引出" class="headerlink" title="引出"></a>引出</h3><p>首先看一段原生调用AJAX的代码，</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//原生调用AJAX</span></div><div class="line"><span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div><div class="line"><span class="keyword">let</span> url1 = <span class="string">"https://free-api.heweather.com/v5/now?city=beijing&amp;key=dce751438a22402b9c8c1fcb95e3ce82"</span></div><div class="line"><span class="keyword">let</span> url2 = <span class="string">"http://api.k780.com/?app=weather.future&amp;weaid=1&amp;appkey=25688&amp;sign=f1b67fe3f11c62d94d613a42f7fbd7b9&amp;format=json"</span></div><div class="line">xhr.open(<span class="string">"GET"</span>, url1, <span class="literal">true</span>);</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (xhr.readyState == <span class="number">4</span>) &#123;</div><div class="line">        <span class="keyword">if</span> (xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span> || xhr.status === <span class="number">304</span>) &#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">"JSON by native:"</span>);</div><div class="line">            <span class="built_in">console</span>.log(xhr.responseText);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">xhr.send();</div></pre></td></tr></table></figure>
+<p><code>url1</code>和<code>url2</code>两个天气的接口，<code>url1</code>来自<a href="https://www.heweather.com/documents/api/v5/now" target="_blank" rel="external">和风天气</a>，<code>url2</code>来自<a href="https://www.heweather.com/documents/api/v5/now" target="_blank" rel="external">NOWapi</a>，对<code>url1</code>的调用结果为</p>
+<p><img src="/2017-05-27/AJAX跨域请求分析/./AJAX跨域请求分析/json1.png" alt="json1"></p>
+<p>对url2调用的结果为</p>
+<p><img src="/2017-05-27/AJAX跨域请求分析/./AJAX跨域请求分析/json2.png" alt="json2"></p>
+<p>造成这两个结果不同的原因就是AJAX在调用时的同源策略，下面将进行分析。</p>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>同源的反面——就是非同源，也就是跨域，首先确定跨域的定义（引自<a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="external">浏览器的同源策略</a>）：</p>
+<blockquote>
+<p>如果协议，端口（如果指定了一个）和域名对于两个页面是相同的，则两个页面具有相同的<strong>源</strong>。</p>
+</blockquote>
+<p>具体的大家可以看这篇文章<a href="http://twlidong.github.io/blog/2013/12/22/kua-yuan-zi-yuan-gong-xiang-cross-origin-resource-sharing-cors/" target="_blank" rel="external">跨源资源共享 Cross Origin Resource Sharing(CORS)</a>，讲的非常好了。</p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>从MDN的定义上来说：</p>
+<blockquote>
+<p> 出于安全考虑，浏览器会限制脚本中发起的跨域请求。比如，使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="external"><code>XMLHttpRequest</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API" target="_blank" rel="external">Fetch </a>发起的 HTTP 请求必须遵循<a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="external">同源策略</a>。因此，Web 应用通过 <a href="https://developer.mozilla.org/en/DOM/XMLHttpRequest" target="_blank" rel="external"><code>XMLHttpRequest</code></a> 对象或 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="external">Fetch</a> 仅能向同域资源发起 HTTP 请求。 </p>
+</blockquote>
+<p>但禁止跨域访问显然限制了网站的能力，所以浏览器实现了合理的跨域请求，JS高程三：</p>
+<blockquote>
+<p>CORS（Cross-Origin Resource Sharing，跨源资源共享）是 W3C 的一个工作草案，定义了在必须访<br>问跨源资源时，浏览器与服务器应该如何沟通。 CORS 背后的基本思想，就是使用自定义的 HTTP 头部<br>让浏览器与服务器进行沟通，从而决定请求或响应是应该成功，还是应该失败。</p>
+</blockquote>
+<p>这个自定义的头部就是<strong>Origin字段</strong>，其中包含请求页面的源信息（协议、域名和端口），以便服务器根据这个头部信息来决定是否给予响应。</p>
+<blockquote>
+<p>Firefox 3.5+、 Safari 4+、 Chrome、 iOS 版 Safari 和 Android 平台中的 WebKit 都通过 XMLHttpRequest<br>对象实现了对 CORS 的原生支持。在尝试打开不同来源的资源时，无需额外编写代码就可以触发这个行<br>为。 要请求位于另一个域中的资源，使用标准的 XHR 对象并在 open()方法中传入绝对 URL 即可。</p>
+</blockquote>
+<p>因此，能否进行CORS通信的关键是服务器，只要服务器实现了CORS接口，就可以跨域通信。</p>
+<p>当一个A网址的网页向B网址发送请求的时候，B的server就会根据A发出的请求的头部信息决定是否允许访问，对A的response header中会包含<code>Access-Control-Allow-Origin</code>来告诉浏览器B网址的数据是否能被A对应的域访问到（如果没有这个头部，或者有这个头部但源信息不匹配，浏览器就会驳回请求）。</p>
+<p>默认情况下，B网址不允许跨域访问，不过B端server通过设置<code>Access-Control-Allow-Origin</code>可以允许特定的域访问。</p>
+<p>B端的server可以设置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin: http://siteA.com</div></pre></td></tr></table></figure>
+<p>来允许A域名下的访问请求（当然也可以设为<code>*</code>，就是公共资源了，谁都可以访问）。</p>
+<p>现代浏览器并不会完全阻止跨域请求，如果A网页向B网页发送跨域请求，浏览器还是会在网络层取得请求页面然后检查response header中有没有将A域设为允许访问的域。（有些文章中写道浏览器禁止跨域发送请求的说法其实是不正确的，无论是否跨域，浏览器都会向服务器发送请求<u>IE7及以下会阻止</u>，然后根据Response Headers来确定数据是否成功访问）。如果B端的server没有允许A域进行访问，那么浏览器将会触发<code>XMLHttpRequest</code>‘s <code>error</code>事件并阻止JS代码访问返回到数据（就像上面提到的，返回的response header中没有<code>Access-Control-Allow-Origin</code>字段）。</p>
+<h3 id="简单请求"><a href="#简单请求" class="headerlink" title="简单请求"></a>简单请求</h3><p>某些请求不会触发 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS#Preflighted_requests" target="_blank" rel="external">CORS 预检请求</a>。本文称这样的请求为“简单请求”，请注意，该术语并不属于 <a href="https://fetch.spec.whatwg.org/" target="_blank" rel="external">Fetch</a> （其中定义了 CORS）规范。若请求满足所有下述条件，则该请求可视为“简单请求”：</p>
+<ul>
+<li>使用下列方法之一：<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/GET" target="_blank" rel="external"><code>GET</code></a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/HEAD" target="_blank" rel="external"><code>HEAD</code></a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Methods/POST" target="_blank" rel="external"><code>POST</code></a></li>
+</ul>
+</li>
+<li>Fetch 规范定义了<a href="https://fetch.spec.whatwg.org/#cors-safelisted-request-header" target="_blank" rel="external">对 CORS 安全的首部字段集合</a>，不得人为设置该集合之外的其他首部字段。该集合为：<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept" target="_blank" rel="external"><code>Accept</code></a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Accept-Language" target="_blank" rel="external"><code>Accept-Language</code></a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Language" target="_blank" rel="external"><code>Content-Language</code></a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="external"><code>Content-Type</code></a> （需要注意额外的限制）</li>
+<li><code>DPR</code></li>
+<li><code>Downlink</code></li>
+<li><code>Save-Data</code></li>
+<li><code>Viewport-Width</code></li>
+<li><code>Width</code></li>
+</ul>
+</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="external"><code>Content-Type</code></a> 的值属于下列之一：<ul>
+<li><code>application/x-www-form-urlencoded</code></li>
+<li><code>`multipart/form-data</code></li>
+<li><code>text/plain</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><ol>
+<li><p>首先客户端通过XHR向服务器发送HTTP请求，其中客户端和服务器之间使用 CORS 首部字段来处理跨域权限（如果服务器通过则允许跨域访问），即Origin字段，HTTP请求头如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">GET /v5/now?city=beijing&amp;key=dce751438a22402b9c8c1fcb95e3ce82 HTTP/1.1</div><div class="line">Host: free-api.heweather.com</div><div class="line">Connection: keep-alive</div><div class="line">Origin: null</div><div class="line">User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36</div><div class="line">Accept: */*</div><div class="line">Accept-Encoding: gzip, deflate, sdch, br</div><div class="line">Accept-Language: zh-CN,zh;q=0.8</div></pre></td></tr></table></figure>
+</li>
+<li><p>然后是服务器进行返回，分为两种情况：</p>
+<ol>
+<li><p><strong>服务端允许</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin:*</div><div class="line">Connection:keep-alive</div><div class="line">Content-Length:362</div><div class="line">Content-Type:application/json;charset=UTF-8</div><div class="line">Date:Thu, 25 May 2017 15:55:41 GMT</div><div class="line">Server:nginx/1.9.10</div><div class="line">Set-Cookie:JSESSIONID=6A2D4564076C2A7AADA8F0FAF8B3BFC1; Path=/; HttpOnly</div><div class="line">Set-Cookie:bug_token=74985bfc9d79459c8916df1349e608d5; Path=/; HttpOnly</div></pre></td></tr></table></figure>
+<p>服务端返回的 <code>Access-Control-Allow-Origin: *</code> 表明，该资源可以被<strong>任意</strong>外域访问，</p>
+</li>
+<li><p><strong>服务端拒绝</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Connection:keep-alive</div><div class="line">Content-Length:3317</div><div class="line">Content-Type:application/json; charset=utf-8;</div><div class="line">Date:Thu, 25 May 2017 14:58:12 GMT</div><div class="line">Server:nginx/1.10.3</div></pre></td></tr></table></figure>
+<p>相比服务端允许的情况少了，少了如下字段（可以证明即使被拒绝，也向服务器发送了请求，只不过被服务器发了好人卡）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Access-Control-Allow-Origin:*</div><div class="line">Set-Cookie:JSESSIONID=6A2D4564076C2A7AADA8F0FAF8B3BFC1; Path=/; HttpOnly</div><div class="line">Set-Cookie:bug_token=74985bfc9d79459c8916df1349e608d5; Path=/; HttpOnly</div></pre></td></tr></table></figure>
+<p>其中<code>Access-Control-Allow-Origin</code>参数值指定了允许访问该资源的外域 URL。url2请求失败时的错误信息<code>No &#39;Access-Control-Allow-Origin&#39; header is present on the requested resource. Origin &#39;null&#39; is therefore not allowed access.</code>就是在说request response中没有<code>Access-Control-Allow-Origin</code>这个字段，导致报错。而<code>Access-Control-Allow-Origin</code>的值为<code>*</code>或者是发送请求的域时，浏览器才允许我们拿到它页面的数据进行下一步处理。</p>
+<h6 id="可能返回的请求"><a href="#可能返回的请求" class="headerlink" title="可能返回的请求"></a>可能返回的请求</h6><p>有三个与CORS请求相关的字段，都以<code>Access-Control-</code>开头。</p>
+<p><strong>（1）Access-Control-Allow-Origin</strong>（必须）</p>
+<p>该字段是必须的。它的值要么是请求时<code>Origin</code>字段的值，要么是一个<code>*</code>，表示接受任意域名的请求。</p>
+<p><strong>（2）Access-Control-Allow-Credentials</strong>（可选）</p>
+<p>该字段可选。它的值是一个布尔值，表示是否允许发送Cookie。默认情况下，Cookie不包括在CORS请求之中。设为<code>true</code>，即表示服务器明确许可，Cookie可以包含在请求中，一起发给服务器。这个值也只能设为<code>true</code>，如果服务器不要浏览器发送Cookie，删除该字段即可。</p>
+<p><strong>（3）Access-Control-Expose-Headers</strong>（可选）</p>
+<p>该字段可选。CORS请求时，<code>XMLHttpRequest</code>对象的<code>getResponseHeader()</code>方法只能拿到6个基本字段：<code>Cache-Control</code>、<code>Content-Language</code>、<code>Content-Type</code>、<code>Expires</code>、<code>Last-Modified</code>、<code>Pragma</code>。如果想拿到其他字段，就必须在<code>Access-Control-Expose-Headers</code>里面指定。上面的例子指定，<code>getResponseHeader(&#39;FooBar&#39;)</code>可以返回<code>FooBar</code>字段的值。</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="TIPS"><a href="#TIPS" class="headerlink" title="TIPS"></a>TIPS</h3><ul>
+<li><p><strong>Q：stateReady和status有什么区别</strong>：</p>
+<p>A：stateReady用来指示XHR请求的<em>状态</em>（比如请求还没有发送（0）， 请求完成并且已收到response（4）），stateReady是由客户端进行判断的。而status用来指示对服务器的请求是否<em>成功</em>，由服务器决定返回值。所以在进行onreadystatechange时，需要先进行判断readystate确定本地的请求已完成，再通过status去判断服务器对请求的响应。</p>
+</li>
+<li><p><strong>Q：为什么使用Postman可以直接跨域请求，而且浏览器必须通过JSONP才能进行跨域？</strong></p>
+<p>A：Quoted from <a href="http://developer.chrome.com/extensions/xhr.html" target="_blank" rel="external"><em>Cross-Origin XMLHttpRequest</em></a>:</p>
+<blockquote>
+<p>Regular web pages can use the XMLHttpRequest object to send and receive data from remote servers, but they’re limited by the same origin policy. Extensions aren’t so limited. An extension can talk to remote servers outside of its origin, as long as it first requests cross-origin permissions.</p>
+</blockquote>
+</li>
+</ul>
+<p>  普通的网页可以用使用XHR和远程服务器发送和接收数据，可是他们需要遵循同源策略。但是拓展工具不受限制，他们只要先申请了跨域许可，就可以不受同源策略的限制与服务器进行交互。</p>
+</div></article></div></main><footer><div class="paginator"><a class="prev" href="/2017-06-06/HTML5大纲及计算方法/">prev</a><a class="next" href="/2017-04-30/JavaScript高程3笔记/">next</a></div><div class="copyright"><p>&copy; 2017 <a href="https://fi3ework.github.io">Wee</a>.<br>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Ares</a>.</p></div></footer></div></body></html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>使用github+Hexo搭建个人博客 | firework's Studio</title><meta name="description" content="使用github+Hexo搭建个人博客 - Wee"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/theme.css"><link rel="search" type="application/opensearchdescription+xml" href="/atom.xml" title="firework's Studio"></head><body><div class="wrap"><header><h1 class="branding"><a href="/" title="firework's Studio">firework's Studio</a></h1><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">HOME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/archives" target="_self">ARCHIVES</a></li><li class="nav-list-item"><a class="nav-list-link" href="//github.com/fi3ework" target="_self">GITHUB</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">使用github+Hexo搭建个人博客</h1><div class="post-info"><a></a>2017-02-05</div><div class="post-content"><h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>之前一直使用CSDN Blog来写博客，但是对于一个颜控来说CSDN的界面实在是有点丑陋😏，就转头了GitHub Pages，配合Hexo搭建完成。在这个博客的第一篇博文就记录一下这个博客是如何搭建成的好了。</p>
+<h3 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h3><p>本博客搭建的方法参考 <a href="http://crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/#more" target="_blank" rel="external">GitHub Pages + Hexo搭建博客</a>，在这里对原作者表示感谢。<br>原作者的方案有一点是很好的，就是在原仓库<code>username.github.io.git</code>中再开一条<code>hexo</code>分支来管理hexo的部署，这样即使不在常用的电脑身边也可以管理博客，而且在<code>hexo init</code>之后路径下会自动生成.gitignore文件，其本意也就是鼓励我们使用GitHub来进行管理。<br>但原作者的流程中有一些问题，先进行<code>git clone</code>再进行<code>hexo init</code>的话，<code>hexo init</code>会将文件夹清零，需要修改一下流程。<br>整体流程如下：</p>
+<ol>
+<li>在GitHub中注册名为<code>username.github.io</code>的仓库，username为账号名。</li>
+<li>在远程仓库新建一个分支，比如<code>Hexo</code>。</li>
+<li>按照上文链接中的方法依次执行<code>hexo init``hexo install</code>等操作，完成后使用<code>hexo s</code>预览一下。</li>
+<li>将本地的仓库push到远程仓库中<code>Hexo</code>中，在_config.yml中设置<code>branch: master</code>，Hexo已经为我们设置好了.gitignore，将忽略public文件夹（public文件夹里的文件会push到<code>master</code>中进行展示）和一些node包。</li>
+</ol>
+<p>到这一步就完成了，<code>Hexo</code>分支将管理本地的除用于发布的文件和一些包之外的文件，<code>master</code>由Hexo管理，每次<code>Hexo deploy</code>将自动push到master上，无需我们自己管理。以后写完文章后<code>Hexo generate</code>,<code>Hexo deploy</code>，然后再对<code>Hexo</code>分支push即可。</p>
+<h3 id="彩蛋🎉"><a href="#彩蛋🎉" class="headerlink" title="彩蛋🎉"></a>彩蛋🎉</h3><p>分享一些Hexo与Markdown的相关网址。</p>
+<ul>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo官方文档</a></li>
+<li><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">有哪些好看的 Hexo 主题？ - 知乎</a></li>
+<li><a href="https://xuanwo.org/2015/03/26/hexo-intor/" target="_blank" rel="external">史上最详细的Hexo博客搭建图文教程</a></li>
+<li><a href="http://www.kancloud.cn/wizardforcel/markdown-simple-world/97381" target="_blank" rel="external">Hexo 入门指南（一） - 简介 &amp; 准备</a></li>
+<li><a href="http://ijiaober.github.io/categories/hexo/" target="_blank" rel="external">Hexo使用攻略</a></li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a class="prev" href="/2017-02-07/float理解/">prev</a></div><div class="copyright"><p>&copy; 2017 <a href="https://fi3ework.github.io">Wee</a>.<br>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Ares</a>.</p></div></footer></div></body></html>

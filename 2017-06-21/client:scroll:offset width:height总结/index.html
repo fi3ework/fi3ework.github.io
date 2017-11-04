@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>client/scroll/offset width/height总结 | firework's Studio</title><meta name="description" content="client/scroll/offset width/height总结 - Wee"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/theme.css"><link rel="search" type="application/opensearchdescription+xml" href="/atom.xml" title="firework's Studio"></head><body><div class="wrap"><header><h1 class="branding"><a href="/" title="firework's Studio">firework's Studio</a></h1><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">HOME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/archives" target="_self">ARCHIVES</a></li><li class="nav-list-item"><a class="nav-list-link" href="//github.com/fi3ework" target="_self">GITHUB</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">client/scroll/offset width/height总结</h1><div class="post-info"><a></a>2017-06-21</div><div class="post-content"><ul>
+<li><h4 id="Element-clientHeight-amp-Element-clientWidth"><a href="#Element-clientHeight-amp-Element-clientWidth" class="headerlink" title="Element.clientHeight &amp; Element.clientWidth"></a>Element.clientHeight &amp; Element.clientWidth</h4><h5 id="element-clientHeight（只读）"><a href="#element-clientHeight（只读）" class="headerlink" title="element.clientHeight（只读）"></a>element.clientHeight（只读）</h5><blockquote>
+<p>返回元素内部的高度(单位像素)，包含内边距，但不包括水平滚动条、边框和外边距。</p>
+<p><code>clientHeight</code> 可以通过 CSS <code>height</code> + CSS <code>padding</code> - 水平滚动条高度 (如果存在)来计算.</p>
+<h5 id="Element-clientWidth（只读）"><a href="#Element-clientWidth（只读）" class="headerlink" title="Element.clientWidth（只读）"></a>Element.clientWidth（只读）</h5><p><code>Element.clientWidth</code> 属性表示元素的内部宽度，以像素计。该属性<strong>包括内边距，但不包括垂直滚动条（如果有的话）、边框和外边距</strong>。</p>
+</blockquote>
+<p><img src="https://developer.mozilla.org/@api/deki/files/185/=Dimensions-client.png" alt="element.clientHeight"></p>
+</li>
+<li><h4 id="Element-clientLeft（只读）-amp-Element-clientTop（只读）"><a href="#Element-clientLeft（只读）-amp-Element-clientTop（只读）" class="headerlink" title="Element.clientLeft（只读）&amp; Element.clientTop（只读）"></a>Element.clientLeft（只读）&amp; Element.clientTop（只读）</h4><blockquote>
+<p>表示一个元素的左边框的宽度，以像素表示。如果元素的文本方向是从右向左（RTL, right-to-left），并且由于内容溢出导致左边出现了一个垂直滚动条，则该属性包括滚动条的宽度。<strong><code>clientLeft</code> 不包括左外边距和左内边距</strong>。<code>clientLeft</code> 是只读的。</p>
+<p>一个元素顶部边框的宽度（以像素表示）。不包括顶部外边距或内边距。<code>clientTop</code> 是只读的。</p>
+</blockquote>
+</li>
+<li><h4 id="Element-scrollTop（读写）"><a href="#Element-scrollTop（读写）" class="headerlink" title="Element.scrollTop（读写）"></a>Element.scrollTop（读写）</h4><blockquote>
+<p><code>这个Element.scrollTop</code> 属性可以设置或者获取一个元素距离他容器顶部的像素距离。一个元素的 <code>scrollTop</code> 是可以去计算出这个<strong>元素距离它容器顶部的可见高度</strong>。当一个元素的容器没有产生垂直方向的滚动条,那它的 <code>scrollTop 的值默认为0</code>.</p>
+</blockquote>
+<ul>
+<li>如果一个元素不能被滚动 (e.g. 它没有溢出容器或者 这个元素是不可滚动的), <code>scrollTop被设置为0</code>.</li>
+<li>设置scrollTop的值小于0，<code>scrollTop</code> 被设为<code>0</code></li>
+<li><p>如果设置了超出这个容器可滚动的值, <code>scrollTop</code> 会被设为最大值.</p>
+<p><img src="https://developer.mozilla.org/@api/deki/files/842/=ScrollTop.png" alt="element.scrollTop"></p>
+</li>
+</ul>
+</li>
+<li><h4 id="Element-scrollLeft（读写）"><a href="#Element-scrollLeft（读写）" class="headerlink" title="Element.scrollLeft（读写）"></a>Element.scrollLeft（读写）</h4><blockquote>
+<p> <strong>Element.scrollLeft</strong> 属性可以读取或设置元素滚动条到元素左边的距离。注意如果这个元素的内容排列方向（<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/direction" target="_blank" rel="external"><code>direction</code></a>） 是<code>rtl</code> (right-to-left) ，那么滚动条会位于最右侧（内容开始处），并且scrollLeft值为0。此时，当你从右到左拖动滚动条时，scrollLeft会从0变为负数（这个特性在chrome浏览器中不存在）。</p>
+</blockquote>
+<ul>
+<li>如果元素不能滚动（比如：元素没有溢出），那么<code>scrollLeft</code> 的值是0。</li>
+<li>如果给<code>scrollLeft</code> 设置的值小于0，那么<code>scrollLeft</code> 的值将变为0。</li>
+<li>如果给<code>scrollLeft</code> 设置的值大于元素内容最大宽度，那么<code>scrollLeft</code> 的值将被设为元素最大宽度。</li>
+</ul>
+</li>
+<li><h4 id="ELement-scrollHeight（只读）-amp-Element-scrollHeigt（只读）"><a href="#ELement-scrollHeight（只读）-amp-Element-scrollHeigt（只读）" class="headerlink" title="ELement.scrollHeight（只读） &amp; Element.scrollHeigt（只读）"></a>ELement.scrollHeight（只读） &amp; Element.scrollHeigt（只读）</h4><blockquote>
+<p><code>Element.scrollHeight</code> 是计量元素内容高度的只读属性，包括overflow样式属性导致的视图中不可见内容。没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同。<strong>包括元素的padding，但不包括元素的margin.</strong></p>
+<p><strong>Element.scrollHeight</strong> 是计量元素内容高度的只读属性，包括overflow样式属性导致的视图中不可见内容。没有垂直滚动条的情况下，scrollHeight值与元素视图填充所有内容所需要的最小值clientHeight相同。包括元素的padding，但不包括元素的margin.</p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://developer.mozilla.org/@api/deki/files/840/=ScrollHeight.png" alt="element.scrollHeight"></p>
+<ul>
+<li><h4 id="HTMLElement-offsetHegiht（只读）-amp-HTMLElement-offsetWidth（只读）"><a href="#HTMLElement-offsetHegiht（只读）-amp-HTMLElement-offsetWidth（只读）" class="headerlink" title="HTMLElement.offsetHegiht（只读）&amp; HTMLElement.offsetWidth（只读）"></a>HTMLElement.offsetHegiht（只读）&amp; HTMLElement.offsetWidth（只读）</h4><blockquote>
+<p>HTMLElement.offsetHeight 是一个只读属性，它返回该元素的像素高度，高度包含该元素的垂直内边距和边框，且是一个整数。</p>
+<p>通常，<strong>元素的offsetHeight是一种衡量标准，包括元素的边框、垂直内边距和元素的水平滚动条（如果存在且渲染的话）和元素的CSS高度。</strong></p>
+<p>对于文档的主体对象，它包括代替元素的CSS高度线性总含量高。浮动元素的向下延伸内容高度是被忽略的。 </p>
+<p><strong>HTMLElement.offsetWidth</strong> 是一个只读属性，返回一个元素的布局宽度。一个典型的（译者注：各浏览器的offsetWidth可能有所不同）<strong>offsetWidth是测量元素的边框(border)、水平线上的内边距(padding)、竖直方向滚动条(scroolbar)（如果存在的话）、以及CSS设置的宽度(width)的值。</strong></p>
+</blockquote>
+</li>
+</ul>
+<p><img src="https://developer.mozilla.org/@api/deki/files/186/=Dimensions-offset.png" alt="HTMLElement.offsetHegiht"></p>
+<ul>
+<li><h4 id="HTMLElement-offsetParent（只读）"><a href="#HTMLElement-offsetParent（只读）" class="headerlink" title="HTMLElement.offsetParent（只读）"></a><strong>HTMLElement.offsetParent</strong>（只读）</h4><blockquote>
+<p><strong>HTMLElement.offsetParent</strong> 是一个只读属性，返回一个指向最近的（closest，指包含层级上的最近）包含该元素的定位元素。如果没有定位的元素，则 <code>offsetParent</code> 为最近的 <code>table</code>元素对象或根元素（标准模式下为 <code>html</code>；quirks 模式下为 <code>body</code>）。当元素的 <code>style.display</code> 设置为 “none” 时，<code>offsetParent</code> 返回 <code>null</code>。<code>offsetParent</code> 很有用，<strong>因为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetTop" target="_blank" rel="external"><code>offsetTop</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetLeft" target="_blank" rel="external"><code>offsetLeft</code></a> 都是相对于其内边距边界的。</strong></p>
+</blockquote>
+<h5 id="浏览器兼容性"><a href="#浏览器兼容性" class="headerlink" title="浏览器兼容性"></a>浏览器兼容性</h5><p>   在 Webkit 中，如果元素为隐藏的（该元素或其祖先元素的 <code>style.display</code> 为 “none”），或者该元素的 <code>style.position</code> 被设为 “fixed”，则该属性返回 <code>null</code>。</p>
+<p>   在 IE 9 中，如果该元素的 <code>style.position</code> 被设置为 “fixed”，则该属性返回 <code>null</code>。（<code>display:none</code> 无影响。）</p>
+</li>
+<li><h4 id="HTMLElement-offsetLeft（只读）-amp-HTMLElement-offsetTop（只读）"><a href="#HTMLElement-offsetLeft（只读）-amp-HTMLElement-offsetTop（只读）" class="headerlink" title="HTMLElement.offsetLeft（只读）&amp; HTMLElement.offsetTop（只读）"></a>HTMLElement.offsetLeft（只读）&amp; HTMLElement.offsetTop（只读）</h4><blockquote>
+<p> <strong>HTMLElement.offsetLeft</strong> 是一个只读属性，返回当前元素<em>左上角</em>相对于  <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent" target="_blank" rel="external"><code>HTMLElement.offsetParent</code></a> 节点的左边界<strong>（内边距边界）</strong>偏移的像素值。</p>
+<p> 对块级元素来说，<code>offsetTop</code>、<code>offsetLeft</code>、<code>offsetWidth</code> 及 <code>offsetHeight</code> 描述了元素相对于 <code>offsetParent</code> 的边界框。</p>
+<p> 然而，对于可被截断到下一行的行内元素（如 <strong>span</strong>），<code>offsetTop</code> 和 <code>offsetLeft</code> 描述的是<em>第一个</em>边界框的位置（使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getClientRects" target="_blank" rel="external"><code>Element.getClientRects()</code></a> 来获取其宽度和高度），而 <code>offsetWidth</code> 和 <code>offsetHeight</code> 描述的是边界框的维度（使用 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/getBoundingClientRect" target="_blank" rel="external"><code>Element.getBoundingClientRect</code></a> 来获取其位置）。因此，使用 <code>offsetLeft、offsetTop、offsetWidth</code>、<code>offsetHeight</code> 来对应 left、top、width 和 height 的一个盒子将不会是文本容器 span 的盒子边界。</p>
+<p><strong>HTMLElement.offsetTop</strong> 为只读属性，它返回当前元素相对于其 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLElement/offsetParent" target="_blank" rel="external"><code>offsetParent</code></a> 元素的顶部的距离。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="总结图"><a href="#总结图" class="headerlink" title="总结图"></a>总结图</h3><p><img src="https://i.stack.imgur.com/zWca7.png" alt="Microsoft has a nice image in the MSDN:"></p>
+<p><img src="https://i.stack.imgur.com/5AAyW.png" alt=""></p>
+<p><img src="http://pic002.cnblogs.com/images/2011/85285/2011102915280329.jpg" alt=""><br><img src="https://i.stack.imgur.com/NANud.png" alt=""> <img src="https://i.stack.imgur.com/RFxSh.png" alt=""></p>
+<h3 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h3><ul>
+<li><code>clientHegiht</code> <code>clientWidth</code>：包括padding，不包括border的可见区域大小，不能通过CSS计算得到大小，因为不知道滚动条的大小。</li>
+</ul>
+<ul>
+<li><p><code>offsetHeight</code> <code>offsetWidth</code>：包括border， padding和滚动条的可见区域大小，可以通过<code>width + padding</code>得到大小。</p>
+</li>
+<li><p><code>scrollHeight</code> <code>scrollWidth</code>，页面内容的总长度，<strong>不包括border</strong>，不能通过CSS计算大小。</p>
+<p>​</p>
+</li>
+</ul>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li><p>判断滚动元素是否到底（比如安装软件时的协议条款）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">element.scrollHeight - element.scrollTop === element.clientHegiht;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li>MDN</li>
+</ul>
+<ul>
+<li><a href="https://stackoverflow.com/questions/21064101/understanding-offsetwidth-clientwidth-scrollwidth-and-height-respectively" target="_blank" rel="external">Understanding offsetWidth, clientWidth, scrollWidth and -Height, respectively</a></li>
+</ul>
+</div></article></div></main><footer><div class="paginator"><a class="prev" href="/2017-08-14/hexo-theme-archer/">prev</a><a class="next" href="/2017-06-19/SASS的map/">next</a></div><div class="copyright"><p>&copy; 2017 <a href="https://fi3ework.github.io">Wee</a>.<br>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> &amp; <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Ares</a>.</p></div></footer></div></body></html>
