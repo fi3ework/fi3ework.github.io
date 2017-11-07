@@ -432,9 +432,10 @@ header {
   justify-content: space-around;
   align-items: center; }
   header .branding {
-    margin: 0; }
+    margin: 0;
+    vertical-align: text-bottom; }
     header .branding a {
-      font: 2rem/100% 'Oswald-Regular', 'Helvetica Neue', Arial, sans-serif; }
+      font: 2rem 'Oswald-Regular', 'Helvetica Neue', Arial, sans-serif; }
   header .logo-image {
     width: 60px; }
   header .nav-list-item {
@@ -447,15 +448,16 @@ header {
 .home.post-list {
   margin: 2em 0; }
   .home.post-list .post-list-item {
-    padding: 1em 0 2em;
-    border-bottom: 1px solid #ddd; }
-    .home.post-list .post-list-item:last-child {
-      border-bottom: 0px; }
+    padding: 2em 0 2em;
+    border-bottom: 1px dashed #ddd; }
+    .home.post-list .post-list-item:first-child {
+      border-top: 1px dashed #ddd; }
   .home.post-list .post-content h2:before, .home.post-list .post-content h3:before, .home.post-list .post-content h4:before, .home.post-list .post-content h5:before, .home.post-list .post-content h6:before {
     content: ''; }
   .home.post-list .post-content > ul {
     list-style: initial; }
   .home.post-list .read-more {
+    font-family: "Oswald-Regular";
     color: #42b983; }
 
 .archive {
@@ -484,13 +486,14 @@ header {
   padding-top: 1em; }
 
 .post-block .post-title {
-  margin: 0.65em 0;
+  margin: 0.2em 0;
   color: #2c3e50;
   font-size: 1.5em; }
 
 .post-block .post-info {
+  font-family: "Oswald-Regular";
   color: #7f8c8d;
-  margin: 1.2em 0; }
+  margin: 0.2em 0; }
   .post-block .post-info span {
     margin-left: 0.5rem; }
   .post-block .post-info a.post-from {
@@ -777,7 +780,7 @@ main.container {
     width: 700px;
     margin: 0 auto; }
   header {
-    padding: 20px 0; } }
+    padding: 30px 0 0px 0; } }
 
 @media screen and (max-width: 700px) {
   .wrap {
@@ -805,10 +808,10 @@ main.container {
     margin: 2em 10px; } }
 
 footer {
+  font-family: "Oswald-Regular";
   padding-bottom: 1px; }
   footer .copyright {
     margin: 4em 0;
-    border-top: 1px solid #ddd;
     text-align: center; }
     footer .copyright p, footer .copyright a {
       color: #aaa;
