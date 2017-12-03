@@ -60,11 +60,22 @@
     
 </head>
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/" >fi3ework&#39;s Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name"></a>
+            </div>
+    </div>
     
     <a class="home-link" href=/>fi3ework's Studio.</a>
 </header>
@@ -72,21 +83,37 @@
         <div class="site-intro">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(http://oumn0o088.bkt.clouddn.com/post-bg.jpg)"></div>
     <div class="site-intro-placeholder"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            [Untitled Post]
+            <!-- 404 -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <!-- 文章页标签  -->
+            
+            <div class="post-intro-meta">
+                <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                <span class="post-intro-time">2017/12/03</span>
+            </div>
         
     </div>
 </div>
@@ -154,183 +181,88 @@
             }
         </script>
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-06-06/HTML5大纲及计算方法/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>HTML5大纲及计算方法</span>
-                    </h2>
-                <div class="abstract-content">
-                    HTML5大纲及计算方法HTML5的好处
-在HTML4中定义章节性段落往往需要&lt;div&gt;，但&lt;div&gt;有时又扮演着表达样式的作用，所以在HTML4中章节的定义和范围都是不精确的。在HTML5中，&lt;div&gt;不再计入大纲算法。
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="在create-react-app被eject后的eslint配置"><a href="#在create-react-app被eject后的eslint配置" class="headerlink" title="在create-react-app被eject后的eslint配置"></a>在create-react-app被eject后的eslint配置</h1><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>项目一开始使用的是create-react-app创建的，配置的eslint是用的AlloyTeam的<a href="https://github.com/AlloyTeam/eslint-config-alloy#react" target="_blank" rel="external">eslint-config-alloy/react</a>， 默认配置已经很合理了，并且每条配置都有相应的说明，只需要再根据个人喜好修改一些rule即可，我个人修改的.eslintrc.json配置如下</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"extends"</span>: [</div><div class="line">    <span class="string">"eslint-config-alloy/react"</span></div><div class="line">  ],</div><div class="line">  <span class="attr">"globals"</span>: &#123;</div><div class="line">    // 这里填入你的项目需要的全局变量</div><div class="line">    // 这里值为 false 表示这个全局变量不允许被重新赋值，比如：</div><div class="line">    //</div><div class="line">    // jQuery: false,</div><div class="line">    // $: false</div><div class="line">  &#125;,</div><div class="line">  "rules": &#123;</div><div class="line">    "indent": [</div><div class="line">      "error",</div><div class="line">      2,</div><div class="line">      &#123;</div><div class="line">        <span class="attr">"SwitchCase"</span>: <span class="number">1</span>,</div><div class="line">        <span class="attr">"flatTernaryExpressions"</span>: <span class="literal">true</span></div><div class="line">      &#125;</div><div class="line">    ],</div><div class="line">    "semi": [</div><div class="line">      "error",</div><div class="line">      <span class="string">"never"</span></div><div class="line">    ],</div><div class="line">    "react/jsx-indent": [</div><div class="line">      "error",</div><div class="line">      <span class="number">2</span></div><div class="line">    ],</div><div class="line">    "react/jsx-indent-props": [</div><div class="line">      "error",</div><div class="line">      <span class="number">2</span></div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是在eject之后运行<code>npm start</code>后会直接报错</p>
+<h2 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h2><p>一开始我以为是<a href="https://github.com/AlloyTeam/eslint-config-alloy#react" target="_blank" rel="external">eslint-config-alloy/react</a>的问题，然后将eslintrc改为手写配置依然会报错。证明不是eslint-config-alloy/react的锅。google之后在一个<a href="https://github.com/MoOx/eslint-loader/issues/168#issuecomment-340350264" target="_blank" rel="external">issue</a>发现：</p>
+<blockquote>
+<p>By default Eslint errors will raise webpack errors unless you change the config as shown above.</p>
+</blockquote>
+<p>也就是说，eslint的会在发现error级别错误的时候触发webpack报错，导致编译失败。</p>
+<p>但是为什么会在eject之后eslint就error报错了呢？</p>
+<p>回想一下create-react-app中eslint是如何工作的，控制台有warning/error的信息，但是这个打印出来的信息的其实并不是依照eslint-config-alloy/react规则，而是默认规则。在编辑器（我用的vscode）中的红色波浪线则是根据eslint-config-alloy/react规则显示的。</p>
+<p>也就是说在eject后，编译与波浪提示都根据eslint-config-alloy/react规则进行代码审查，所以eject前根据默认规则写的代码在eject后并不能通过eslint审查所以报了错。（eslint-config-alloy/react规则真的很严格）。</p>
+<h3 id="eslint的error该不该直接退出"><a href="#eslint的error该不该直接退出" class="headerlink" title="eslint的error该不该直接退出"></a>eslint的error该不该直接退出</h3><p>知道了问题在哪里，在这里还有一个设计思路与使用思路上的冲突：eslint默认error级别直接回报错退出，是因为你将某种rule的错误等级定为error，当出错代码触发了这个rule，就以为着你的程序根据你的规则来说并不correct。所以这段代码必须先过了eslint这关（也就是你自己对代码规则的要求），才能放到babel一类的去进行编译。（具体的可以看zakas大神关于这个问题的<a href="https://github.com/eslint/eslint/issues/2949" target="_blank" rel="external">讨论</a>）</p>
+<p>（我个人之前本来比较喜欢error不退出，但是仔细一想这样确实违背eslint的核心思想）</p>
+<h3 id="eslint-loader配置问题"><a href="#eslint-loader配置问题" class="headerlink" title="eslint-loader配置问题"></a>eslint-loader配置问题</h3><p>不过按照eslint-loader的<a href="https://github.com/MoOx/eslint-loader" target="_blank" rel="external">文档</a></p>
+<blockquote>
+<h5 id="failOnError-default-false"><a href="#failOnError-default-false" class="headerlink" title="failOnError (default: false)"></a><code>failOnError</code> (default: <code>false</code>)</h5><p>Loader will cause the module build to fail if there are any eslint errors.</p>
+</blockquote>
+<p><code>failOnError</code>默认是<code>false</code>，按照说明应该是不会阻止build。</p>
+<p>eslint-loader的作者也<a href="https://github.com/MoOx/eslint-loader/issues/23#issuecomment-86513306" target="_blank" rel="external">提到</a>（不过远在2015年3月）</p>
+<blockquote>
+<p>failOn* are off by default to avoid webpack to break the build for “just some linting issues”. So you should not have any error/warning that break the build by default.</p>
+</blockquote>
+<p>然而，实际上build依然失败，具体原因我也不清楚，有几个issue也在反应<code>failOnError</code>不起作用，我猜可能是<code>eslint-loader</code>没能成功的配置<code>eslint</code>，这个坑以后仔细研究一下再来填（逃。</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="方案1"><a href="#方案1" class="headerlink" title="方案1"></a>方案1</h3><p>eslint-loader的作者给出的<a href="https://github.com/MoOx/eslint-loader/issues/23#issuecomment-229417176" target="_blank" rel="external">解决方案</a></p>
+<blockquote>
+<p>Like I said, you can use <code>emitWarning: true</code> option to force all eslint error/warning being reported as warnings</p>
+</blockquote>
+<p>将<code>emitWarning</code>设为<code>true</code>就可以了，所有的error/warning信息都会打印出来，error也不会阻止编译，简单粗暴。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">rules: [&#123;</div><div class="line">  enforce: 'pre',</div><div class="line">  test: /\.jsx?$/,</div><div class="line">  loader: 'eslint-loader',</div><div class="line">  options: &#123;</div><div class="line">    emitWarning: true</div><div class="line">  &#125;</div><div class="line">&#125;]</div></pre></td></tr></table></figure>
+<h3 id="方案2"><a href="#方案2" class="headerlink" title="方案2"></a>方案2</h3><p>遵照zakas大神的设计思路，报error的就阻止编译，改到通过为止，报warning的就打印出来。</p>
+<h3 id="方案3（暴力）"><a href="#方案3（暴力）" class="headerlink" title="方案3（暴力）"></a>方案3（暴力）</h3><p>将<code>./node_modules/eslint-loader/index.js</code>中的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emitter(webpack.version === <span class="number">2</span> ? <span class="keyword">new</span> ESLintError(messages) : messages)</div></pre></td></tr></table></figure>
+<p>直接注释掉哈哈哈哈哈哈哈，就不会返回错误码了，这样控制台永远都是 0 error 0 warning，错误就只能通过编辑器的红线提示来看了。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li><a href="https://github.com/MoOx/eslint-loader/issues/23#issuecomment-343122777" target="_blank" rel="external">errors cause webpack to not build #23</a></li>
+<li><a href="https://github.com/MoOx/eslint-loader" target="_blank" rel="external">MoOx/eslint-loader</a></li>
+<li><a href="https://github.com/MoOx/eslint-loader/issues/168#issuecomment-340350264" target="_blank" rel="external">ESLint error causing Webpack to stop watching/building #168</a></li>
+<li><a href="https://github.com/eslint/eslint/issues/2949" target="_blank" rel="external">Option to exit with success even if there are errors #2949</a></li>
+<li><a href="https://github.com/MoOx/eslint-loader/issues/148" target="_blank" rel="external">eslint-loader with WebPack 2.2 #148</a></li>
+</ul>
 
-如果在主文档中嵌套了子文档（比如在一个h2文档中又出现一个h1文档），会造成大纲的混乱。引入新的元素&lt;article&gt;,&lt;section&gt;,&lt;nav&gt;和&lt;aside&gt;，他们总是成为其最近祖先章节的子章节。
+    </article>
+    <!-- 前后页  -->
+    <ul class="post-pager">
+        
+        
+            <li class="previous">
+                <a href= "/2017-11-08/HOC/" title= 基于Decorator的React高阶组件的思路分析与实现 >
+                    <span>Previous Post</span>
+                    <span>基于Decorator的React高阶组件的思路分析与实现</span>
+                </a>
+            </li>
+        
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
 
-&lt;aside&gt;元素不会插入到大纲当中，可以用来容纳广告或者解释区...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = HTML5>HTML5</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/06/06</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-05-27/AJAX跨域请求分析/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>AJAX跨域请求分析</span>
-                    </h2>
-                <div class="abstract-content">
-                    AJAX跨域请求分析引出首先看一段原生调用AJAX的代码，
-1234567891011121314//原生调用AJAXlet xhr = new XMLHttpRequest();let url1 = "https://free-api.heweather.com/v5/now?city=beijing&amp;key=dce751438a22402b9c8c1fcb95e3ce82"let url2 = "http://api.k780.com/?app=weather.future&amp;weaid=1&amp;appkey=25688&amp;sign=f1b67fe3f11c6...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Ajax>Ajax</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/05/27</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-04-30/JavaScript高程3笔记/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>JavaScript高程3笔记</span>
-                    </h2>
-                <div class="abstract-content">
-                    Chapter11.21.2.2
+    <div id="lv-container" data-id="city" data-uid= MTAyMC8yODQyOS81MDAw>
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
 
-DOM核心（DOM Core）和DOM HTML。其中，DOM核心规定的是如何映射基于XML的文档结构，以便简化对文档中任意部分的访问和操作。 DOM HTML模块则在DOM核心的基础上加以扩展，添加了针对HTML的对象和方法。
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!--PC版-->
+
+    <!--PC版-->
 
 
-
-
-
-DOM2 级在原来 DOM 的基础上又扩充了（DHTML 一直都支持的）鼠标和用户界面事件、范围、遍历（迭代 DOM文档的方法）等细分模块，而且通过对象接口增加了对 CSS（Cascading Style Sheets，层叠样式表）的支持。 DOM1 级中的 DOM 核心模块也经过扩展开始支持 XML 命名空间。
-
-...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 读书>读书</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/04/30</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-02-07/float理解/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>CSS中的float和clear</span>
-                    </h2>
-                <div class="abstract-content">
-                    CSS中的float和clear引言float是CSS中相当重要的属性，很惭愧只学了个皮毛，找个机会认真的学习一下float，以后就不要再在float的坑中摔倒了，那么开始。
-1. float的定义从网上搜了一个中文版对float的定义，出处已无法考证
-
-CSS样式的float浮动属性，用于设置标签对象的浮动布局，浮动也就是我们所说标签对象浮动居左靠左和浮动居右靠右。
-
-从MDN中找了一个相对“官方”的定义。
-
-The float CSS property specifies that an element should be taken from the normal flow and...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = CSS>CSS</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/02/07</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-02-05/使用githubHexo搭建个人博客/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>使用github+Hexo搭建个人博客</span>
-                    </h2>
-                <div class="abstract-content">
-                    引言之前一直使用CSDN Blog来写博客，但是对于一个颜控来说CSDN的界面实在是有点丑陋😏，就转头了GitHub Pages，配合Hexo搭建完成。在这个博客的第一篇博文就记录一下这个博客是如何搭建成的好了。
-正文本博客搭建的方法参考 GitHub Pages + Hexo搭建博客，在这里对原作者表示感谢。原作者的方案有一点是很好的，就是在原仓库username.github.io.git中再开一条hexo分支来管理hexo的部署，这样即使不在常用的电脑身边也可以管理博客，而且在hexo init之后路径下会自动生成.gitignore文件，其本意也就是鼓励我们使用GitHub来进...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Hexo>Hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 环境配置>环境配置</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/02/05</span>
-                </div>
-            </div>
-        </article>
-    
-    <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/">#PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
     
 </main>
             <!-- profile -->
@@ -377,6 +309,13 @@ The float CSS property specifies that an element should be taken from the normal
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper">
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#在create-react-app被eject后的eslint配置"><span class="toc-number">1.</span> <span class="toc-text">在create-react-app被eject后的eslint配置</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#问题"><span class="toc-number">1.1.</span> <span class="toc-text">问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思考"><span class="toc-number">1.2.</span> <span class="toc-text">思考</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#eslint的error该不该直接退出"><span class="toc-number">1.2.1.</span> <span class="toc-text">eslint的error该不该直接退出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eslint-loader配置问题"><span class="toc-number">1.2.2.</span> <span class="toc-text">eslint-loader配置问题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#failOnError-default-false"><span class="toc-number">1.2.2.0.1.</span> <span class="toc-text">failOnError (default: false)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解决"><span class="toc-number">1.3.</span> <span class="toc-text">解决</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方案1"><span class="toc-number">1.3.1.</span> <span class="toc-text">方案1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方案2"><span class="toc-number">1.3.2.</span> <span class="toc-text">方案2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#方案3（暴力）"><span class="toc-number">1.3.3.</span> <span class="toc-text">方案3（暴力）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">1.4.</span> <span class="toc-text">参考</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top">&#xe639;</div>
     <div class="sidebar">

@@ -159,178 +159,27 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017-06-06/HTML5大纲及计算方法/" >
+            <a class="content-show-full" href = "/2017-12-03/在create-react-app被eject后的eslint配置/" >
                     <h2 class="abstract-title">
                         
-                        <span>HTML5大纲及计算方法</span>
+                        <span>[Untitled Post]</span>
                     </h2>
                 <div class="abstract-content">
-                    HTML5大纲及计算方法HTML5的好处
-在HTML4中定义章节性段落往往需要&lt;div&gt;，但&lt;div&gt;有时又扮演着表达样式的作用，所以在HTML4中章节的定义和范围都是不精确的。在HTML5中，&lt;div&gt;不再计入大纲算法。
-
-如果在主文档中嵌套了子文档（比如在一个h2文档中又出现一个h1文档），会造成大纲的混乱。引入新的元素&lt;article&gt;,&lt;section&gt;,&lt;nav&gt;和&lt;aside&gt;，他们总是成为其最近祖先章节的子章节。
-
-&lt;aside&gt;元素不会插入到大纲当中，可以用来容纳广告或者解释区...
+                    在create-react-app被eject后的eslint配置问题项目一开始使用的是create-react-app创建的，配置的eslint是用的AlloyTeam的eslint-config-alloy/react， 默认配置已经很合理了，并且每条配置都有相应的说明，只需要再根据个人喜好修改一些rule即可，我个人修改的.eslintrc.json配置如下
+12345678910111213141516171819202122232425262728293031323334&#123;  "extends": [    "eslint-config-alloy/react"  ]...
                 </div>
             </a>
             <div class="abstract-post-meta">
                 <!-- tags  -->
                 
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = HTML5>HTML5</a>
-    
-</div>
-                
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/06/06</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-05-27/AJAX跨域请求分析/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>AJAX跨域请求分析</span>
-                    </h2>
-                <div class="abstract-content">
-                    AJAX跨域请求分析引出首先看一段原生调用AJAX的代码，
-1234567891011121314//原生调用AJAXlet xhr = new XMLHttpRequest();let url1 = "https://free-api.heweather.com/v5/now?city=beijing&amp;key=dce751438a22402b9c8c1fcb95e3ce82"let url2 = "http://api.k780.com/?app=weather.future&amp;weaid=1&amp;appkey=25688&amp;sign=f1b67fe3f11c6...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Ajax>Ajax</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/05/27</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-04-30/JavaScript高程3笔记/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>JavaScript高程3笔记</span>
-                    </h2>
-                <div class="abstract-content">
-                    Chapter11.21.2.2
-
-DOM核心（DOM Core）和DOM HTML。其中，DOM核心规定的是如何映射基于XML的文档结构，以便简化对文档中任意部分的访问和操作。 DOM HTML模块则在DOM核心的基础上加以扩展，添加了针对HTML的对象和方法。
-
-
-
-
-
-DOM2 级在原来 DOM 的基础上又扩充了（DHTML 一直都支持的）鼠标和用户界面事件、范围、遍历（迭代 DOM文档的方法）等细分模块，而且通过对象接口增加了对 CSS（Cascading Style Sheets，层叠样式表）的支持。 DOM1 级中的 DOM 核心模块也经过扩展开始支持 XML 命名空间。
-
-...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 读书>读书</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/04/30</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-02-07/float理解/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>CSS中的float和clear</span>
-                    </h2>
-                <div class="abstract-content">
-                    CSS中的float和clear引言float是CSS中相当重要的属性，很惭愧只学了个皮毛，找个机会认真的学习一下float，以后就不要再在float的坑中摔倒了，那么开始。
-1. float的定义从网上搜了一个中文版对float的定义，出处已无法考证
-
-CSS样式的float浮动属性，用于设置标签对象的浮动布局，浮动也就是我们所说标签对象浮动居左靠左和浮动居右靠右。
-
-从MDN中找了一个相对“官方”的定义。
-
-The float CSS property specifies that an element should be taken from the normal flow and...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = CSS>CSS</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/02/07</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-02-05/使用githubHexo搭建个人博客/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>使用github+Hexo搭建个人博客</span>
-                    </h2>
-                <div class="abstract-content">
-                    引言之前一直使用CSDN Blog来写博客，但是对于一个颜控来说CSDN的界面实在是有点丑陋😏，就转头了GitHub Pages，配合Hexo搭建完成。在这个博客的第一篇博文就记录一下这个博客是如何搭建成的好了。
-正文本博客搭建的方法参考 GitHub Pages + Hexo搭建博客，在这里对原作者表示感谢。原作者的方案有一点是很好的，就是在原仓库username.github.io.git中再开一条hexo分支来管理hexo的部署，这样即使不在常用的电脑身边也可以管理博客，而且在hexo init之后路径下会自动生成.gitignore文件，其本意也就是鼓励我们使用GitHub来进...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Hexo>Hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 环境配置>环境配置</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/02/05</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/03</span>
                 </div>
             </div>
         </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/">#PREV</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
     
 </main>
             <!-- profile -->
