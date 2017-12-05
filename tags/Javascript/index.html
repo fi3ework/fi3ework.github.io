@@ -159,25 +159,23 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017-12-05/React中的转义字符/" >
+            <a class="content-show-full" href = "/2017-10-08/页面生命周期：DOMContentLoaded, load, beforeunload, unload/" >
                     <h2 class="abstract-title">
                         
-                        <span>React中的HTML转义写法</span>
+                        <span>页面生命周期：DOMContentLoaded, load, beforeunload, unload</span>
                     </h2>
                 <div class="abstract-content">
-                    在JSX中输出固定内容
-直接使用UTF-8字符
-1&lt;div&gt;版权 ©&lt;/div&gt;
+                    原文地址：http://javascript.info/onload-ondomcontentloaded
+HTML页面的生命周期有以下三个重要事件：
 
-使用HTML转义字符
-1&lt;div&gt;版权 &amp;copy;&lt;/div&gt;
-或者十进制的转义字符
-1&lt;div&gt;版权 &amp;#169;&lt;/div&gt;
+DOMContentLoaded — 浏览器已经完全加载了HTML，DOM树已经构建完毕，但是像是  &lt;img&gt; 和样式表等外部资源可能并没有下载完毕。  
+load — 浏览器已经加载了所有的资源（图像，样式表等）。
+beforeunload/unload – 当用户离开页面的时候触发。
 
+每个事件都有特定的用途
 
-动态内容的转义但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义
-
-React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，如果 JSX 中含有转义后的实体字符，比如 &copy;（©），则最后 DOM 中不会正确显示，因为 React...
+DOMContentLoaded – DOM加载完毕，所以js可以访问所有DOM节点，初始化界面。
+load...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -185,155 +183,15 @@ React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，�
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = Javascript>Javascript</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/05</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-12-03/create-react-app-react-eslint/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>为eject后的create-react-app配置ESLint</span>
-                    </h2>
-                <div class="abstract-content">
-                    问题项目一开始使用的是create-react-app创建的，配置的ESLint是用的AlloyTeam的eslint-config-alloy/react， 默认配置已经很合理了，并且每条配置都有相应的说明，只需要再根据个人喜好修改一些rule即可，我个人修改的.eslintrc.json配置如下
-123456789101112131415161718192021222324252627282930313233343536373839404142&#123;    "extends": [        "eslint-config-alloy/react"    ],    "glo...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = ESLint>ESLint</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = 浏览器>浏览器</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/03</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-06-21/client:scroll:offset width:height总结/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>client/scroll/offset width/height总结</span>
-                    </h2>
-                <div class="abstract-content">
-                    
-Element.clientHeight &amp; Element.clientWidthelement.clientHeight（只读）
-返回元素内部的高度(单位像素)，包含内边距，但不包括水平滚动条、边框和外边距。
-clientHeight 可以通过 CSS height + CSS padding - 水平滚动条高度 (如果存在)来计算.
-Element.clientWidth（只读）Element.clientWidth 属性表示元素的内部宽度，以像素计。该属性包括内边距，但不包括垂直滚动条（如果有的话）、边框和外边距。
-
-
-
-Element.clientLeft（只读）&a...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/06/21</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-05-27/AJAX跨域请求分析/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>AJAX跨域请求分析</span>
-                    </h2>
-                <div class="abstract-content">
-                    AJAX跨域请求分析引出首先看一段原生调用AJAX的代码，
-1234567891011121314//原生调用AJAXlet xhr = new XMLHttpRequest();let url1 = "https://free-api.heweather.com/v5/now?city=beijing&amp;key=dce751438a22402b9c8c1fcb95e3ce82"let url2 = "http://api.k780.com/?app=weather.future&amp;weaid=1&amp;appkey=25688&amp;sign=f1b67fe3f11c6...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = Ajax>Ajax</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/05/27</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-04-30/JavaScript高程3笔记/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>JavaScript高程3笔记</span>
-                    </h2>
-                <div class="abstract-content">
-                    Chapter11.21.2.2
-
-DOM核心（DOM Core）和DOM HTML。其中，DOM核心规定的是如何映射基于XML的文档结构，以便简化对文档中任意部分的访问和操作。 DOM HTML模块则在DOM核心的基础上加以扩展，添加了针对HTML的对象和方法。
-
-
-
-
-
-DOM2 级在原来 DOM 的基础上又扩充了（DHTML 一直都支持的）鼠标和用户界面事件、范围、遍历（迭代 DOM文档的方法）等细分模块，而且通过对象接口增加了对 CSS（Cascading Style Sheets，层叠样式表）的支持。 DOM1 级中的 DOM 核心模块也经过扩展开始支持 XML 命名空间。
-
-...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = 读书>读书</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/04/30</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/08</span>
                 </div>
             </div>
         </article>
@@ -666,15 +524,174 @@ DOM2 级在原来 DOM 的基础上又扩充了（DHTML 一直都支持的）鼠�
     
         <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">react</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">javascript</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">读书</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">hexo</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">hexo-theme-archer</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Hexo</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Javascript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">浏览器</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #888; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
+2017 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/05</span><a class="archive-post-title" href= "/2017-12-05/React中的转义字符/" >React中的HTML转义写法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/03</span><a class="archive-post-title" href= "/2017-12-03/create-react-app-react-eslint/" >为eject后的create-react-app配置ESLint</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">11/08</span><a class="archive-post-title" href= "/2017-11-08/HOC/" >基于Decorator的React高阶组件的思路分析与实现</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2017-10-28/A Simple React Router v4 Tutorial/" >简明React Router v4教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2017-10-27/redux to react-redux/" >Redux的工作流程教程</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017-10-08/页面生命周期：DOMContentLoaded, load, beforeunload, unload/" >页面生命周期：DOMContentLoaded, load, beforeunload, unload</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/14</span><a class="archive-post-title" href= "/2017-08-14/hexo-theme-archer/" >hexo-theme-archer</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "/2017-06-21/client:scroll:offset width:height总结/" >client/scroll/offset width/height总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/19</span><a class="archive-post-title" href= "/2017-06-19/SASS的map/" >SASS的map</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/09</span><a class="archive-post-title" href= "/2017-06-09/CSS常用布局方式/" >CSS常用布局方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span><a class="archive-post-title" href= "/2017-06-07/CSS TIPS/" >CSS TIPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href= "/2017-06-06/HTML5大纲及计算方法/" >HTML5大纲及计算方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2017-05-27/AJAX跨域请求分析/" >AJAX跨域请求分析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2017-04-30/JavaScript高程3笔记/" >JavaScript高程3笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2017-02-07/float理解/" >CSS中的float和clear</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "/2017-02-05/使用githubHexo搭建个人博客/" >使用github+Hexo搭建个人博客</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">React</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Ajax</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">读书</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">hexo</a></span>
     
