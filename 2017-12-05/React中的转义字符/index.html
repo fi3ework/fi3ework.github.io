@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
     <title>
         
-        HTML5大纲及计算方法 · fi3ework&#39;s Studio
+        React中的HTML转义写法 · fi3ework&#39;s Studio
         
     </title>
     <link rel="icon" href= /assets/favicon.ico>
@@ -73,7 +73,7 @@
                 <a href="/" >fi3ework&#39;s Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">HTML5大纲及计算方法</a>
+                <a href="#" class="post-name">React中的HTML转义写法</a>
             </div>
     </div>
     
@@ -94,7 +94,7 @@
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            HTML5大纲及计算方法
+            React中的HTML转义写法
             <!-- 404 -->
             
         </h1>
@@ -112,13 +112,15 @@
             
                 <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = HTML5>HTML5</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = react>react</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = javascript>javascript</a>
     
 </div>
             
             <div class="post-intro-meta">
                 <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                <span class="post-intro-time">2017/06/06</span>
+                <span class="post-intro-time">2017/12/05</span>
             </div>
         
     </div>
@@ -189,52 +191,58 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="HTML5大纲及计算方法"><a href="#HTML5大纲及计算方法" class="headerlink" title="HTML5大纲及计算方法"></a>HTML5大纲及计算方法</h1><h3 id="HTML5的好处"><a href="#HTML5的好处" class="headerlink" title="HTML5的好处"></a>HTML5的好处</h3><ol>
-<li><p>在HTML4中定义章节性段落往往需要<code>&lt;div&gt;</code>，但<code>&lt;div&gt;</code>有时又扮演着表达样式的作用，所以在HTML4中章节的定义和范围都是不精确的。在HTML5中，<code>&lt;div&gt;</code>不再计入大纲算法。</p>
+        <h2 id="React中的HTML转义写法"><a href="#React中的HTML转义写法" class="headerlink" title="React中的HTML转义写法"></a>React中的HTML转义写法</h2><h3 id="在JSX中输出固定内容"><a href="#在JSX中输出固定内容" class="headerlink" title="在JSX中输出固定内容"></a>在JSX中输出固定内容</h3><ol>
+<li><p>直接使用UTF-8字符</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 ©&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
 </li>
-<li><p>如果在主文档中嵌套了子文档（比如在一个<code>h2</code>文档中又出现一个<code>h1</code>文档），会造成大纲的混乱。引入新的元素<code>&lt;article&gt;</code>,<code>&lt;section&gt;</code>,<code>&lt;nav&gt;</code>和<code>&lt;aside&gt;</code>，他们总是成为其最近祖先章节的子章节。</p>
-</li>
-<li><p><code>&lt;aside&gt;</code>元素不会插入到大纲当中，可以用来容纳广告或者解释区域。</p>
+<li><p>使用HTML转义字符</p>
 </li>
 </ol>
-<h3 id="HTML5的大纲算法"><a href="#HTML5的大纲算法" class="headerlink" title="HTML5的大纲算法"></a>HTML5的大纲算法</h3><blockquote>
-<p> <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body" target="_blank" rel="external"><code>&lt;body&gt;</code></a> 元素中的所有内容都是节段中的一部分。节段在HTML5中是可以嵌套的。<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body" target="_blank" rel="external"><code>&lt;body&gt;</code></a> 元素定义了主节段，基于主节段，可以显式或隐式定义各个子节段的划分。</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 &amp;copy;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<p>或者十进制的转义字符</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 &amp;#169;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h3 id="动态内容的转义"><a href="#动态内容的转义" class="headerlink" title="动态内容的转义"></a>动态内容的转义</h3><p>但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义</p>
+<blockquote>
+<p>React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，如果 JSX 中含有转义后的实体字符，比如 &copy;（©），则最后 DOM 中不会正确显示，因为 React 自动把 &copy; 中的特殊字符转义了。</p>
 </blockquote>
-<h4 id="显式分节"><a href="#显式分节" class="headerlink" title="显式分节"></a>显式分节</h4><blockquote>
-<p>显式定义的节段是通过<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body" target="_blank" rel="external"><code>&lt;body&gt;</code></a>,  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/section" target="_blank" rel="external"><code>&lt;section&gt;</code></a>,  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/article" target="_blank" rel="external"><code>&lt;article&gt;</code></a>,  <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/aside" target="_blank" rel="external"><code>&lt;aside&gt;</code></a>和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/nav" target="_blank" rel="external"><code>&lt;nav&gt;</code></a> 这些标记中的内容。 </p>
-</blockquote>
-<p>在显示分节时，其决定性作用的是段落的结构，而不是每个段落对应的标题的结构（因此，即使是被嵌套的section也能拥有一个<code>&lt;h1&gt;</code>标题，虽然这种做法并不推荐）。</p>
-<h4 id="隐式分节"><a href="#隐式分节" class="headerlink" title="隐式分节"></a>隐式分节</h4><blockquote>
-<p>HTML标题元素 (<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h1" target="_blank" rel="external"><code>&lt;h1&gt;</code></a> 到 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/h6" target="_blank" rel="external"><code>&lt;h6&gt;</code></a>) 定义了一个新的，隐式的节段，当其不是父节段第一个标题时。这种隐式放置节段的方式通过在父节点中与之前标题的相对级别来定义。<strong>如果比之前的标题级别更低</strong>，那么在节段里开始新的隐式子节段。</p>
-<p><strong>如果与前面标题的级别相同</strong>，那么闭合前面的节段（可能是显式标记的节段！）并开始新的同一级别的隐式节段：</p>
-</blockquote>
-<h3 id="分节根"><a href="#分节根" class="headerlink" title="分节根"></a>分节根</h3><blockquote>
-<p>分节根是一个HTML元素，这个元素可以拥有自己的大纲，但是元素内部的节段和标题对其祖先的大纲没有贡献。除了文档的逻辑分节根<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/body" target="_blank" rel="external"><code>&lt;body&gt;</code></a>元素，这些元素经常在页面中引入外部内容：<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/blockquote" target="_blank" rel="external"><code>&lt;blockquote&gt;</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/details" target="_blank" rel="external"><code>&lt;details&gt;</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/fieldset" target="_blank" rel="external"><code>&lt;fieldset&gt;</code></a>, <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/figure" target="_blank" rel="external"><code>&lt;figure&gt;</code></a> 和<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/td" target="_blank" rel="external"><code>&lt;td&gt;</code></a>。</p>
-</blockquote>
-<h4 id="大纲之外的节段"><a href="#大纲之外的节段" class="headerlink" title="大纲之外的节段"></a>大纲之外的节段</h4><p>用于表示侧边分节元素的<code>&lt;aside&gt;</code>和导航分节元素<code>&lt;nav&gt;</code>，页眉<code>&lt;header&gt;</code>页脚<code>&lt;footer&gt;</code>不计入大纲。</p>
-<p>即这些元素及其包含的元素不会对大纲产生任何影响。</p>
-<h4 id="在不支持HTML5的浏览器器中使用HTML5"><a href="#在不支持HTML5的浏览器器中使用HTML5" class="headerlink" title="在不支持HTML5的浏览器器中使用HTML5"></a>在不支持HTML5的浏览器器中使用HTML5</h4><p>在不支持HTML5的IE9-浏览器中使用HTML5标签的方法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;!--[<span class="keyword">if</span> lt IE <span class="number">9</span>]&gt;</div><div class="line">  &lt;script&gt;</div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"header"</span> );</div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"footer"</span> );</div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"section"</span>); </div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"aside"</span>  );</div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"nav"</span>    );</div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"article"</span>); </div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"hgroup"</span> ); </div><div class="line">    <span class="built_in">document</span>.createElement(<span class="string">"time"</span>   );</div><div class="line">  &lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">  &lt;noscript&gt;</span></div><div class="line"><span class="regexp">     &lt;strong&gt;Warning !&lt;/</span>strong&gt;</div><div class="line">     Because your browser does not support HTML5, some elements are simulated using JScript.</div><div class="line">     Unfortunately your browser has disabled scripting. Please enable it <span class="keyword">in</span> order to display <span class="keyword">this</span> page.</div><div class="line">  &lt;<span class="regexp">/noscript&gt;</span></div><div class="line"><span class="regexp">&lt;![endif]--&gt;</span></div></pre></td></tr></table></figure>
-<h3 id="参考文献："><a href="#参考文献：" class="headerlink" title="参考文献："></a>参考文献：</h3><ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/HTML/Sections_and_Outlines_of_an_HTML5_document" target="_blank" rel="external">HTML5的文档节段和纲要</a></li>
-</ul>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 &amp;#169;'</span>&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<p>错误输出</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">版权 &amp;#169;</div></pre></td></tr></table></figure>
+<p>正确写法：</p>
+<ol>
+<li>直接使用UTF-8字符仍然可以正确输出</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 ©'</span>&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>安全的做法是使用对应的Unicode码</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 \u00a9'</span>&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>使用<code>fromCharCode</code></li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 '</span> + <span class="built_in">String</span>.fromCharCode(<span class="number">169</span>)&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>使用数组组装</li>
+</ol>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;['版权 ', &lt;span&gt;&amp;#169;&lt;/span&gt;]&#125;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<ol>
+<li>使用<code>dangerouslySetInnerHTML</code>，可以避免React转义字符</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div dangerouslySetInnerHTML=&#123;&#123; <span class="attr">__html</span>: <span class="string">'版权 &amp;#169;'</span> &#125;&#125; /&gt;</div></pre></td></tr></table></figure>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol>
+<li><a href="https://shripadk.github.io/react/docs/jsx-gotchas.html#html-entities" target="_blank" rel="external">JSX Gotchas</a></li>
+<li><a href="https://book.douban.com/subject/26918038/" target="_blank" rel="external">深入react技术栈</a></li>
+</ol>
 
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
-            <li class="next">
-                <a href= "/2017-06-07/CSS TIPS/" title= CSS TIPS >
-                    <span>Next Post</span>
-                    <span>CSS TIPS</span>
-                </a>
-            </li>
-        
         
             <li class="previous">
-                <a href= "/2017-05-27/AJAX跨域请求分析/" title= AJAX跨域请求分析 >
+                <a href= "/2017-12-03/create-react-app-react-eslint/" title= 为eject后的create-react-app配置ESLint >
                     <span>Previous Post</span>
-                    <span>AJAX跨域请求分析</span>
+                    <span>为eject后的create-react-app配置ESLint</span>
                 </a>
             </li>
         
@@ -316,7 +324,7 @@
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML5大纲及计算方法"><span class="toc-number">1.</span> <span class="toc-text">HTML5大纲及计算方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5的好处"><span class="toc-number">1.0.1.</span> <span class="toc-text">HTML5的好处</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTML5的大纲算法"><span class="toc-number">1.0.2.</span> <span class="toc-text">HTML5的大纲算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#显式分节"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">显式分节</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隐式分节"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">隐式分节</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分节根"><span class="toc-number">1.0.3.</span> <span class="toc-text">分节根</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#大纲之外的节段"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">大纲之外的节段</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#在不支持HTML5的浏览器器中使用HTML5"><span class="toc-number">1.0.3.2.</span> <span class="toc-text">在不支持HTML5的浏览器器中使用HTML5</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文献："><span class="toc-number">1.0.4.</span> <span class="toc-text">参考文献：</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React中的HTML转义写法"><span class="toc-number">1.</span> <span class="toc-text">React中的HTML转义写法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在JSX中输出固定内容"><span class="toc-number">1.1.</span> <span class="toc-text">在JSX中输出固定内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态内容的转义"><span class="toc-number">1.2.</span> <span class="toc-text">动态内容的转义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li></ol>
     </div>
     
     <div class="back-top">&#xe639;</div>

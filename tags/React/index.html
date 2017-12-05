@@ -159,87 +159,25 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017-12-03/create-react-app-react-eslint/" >
+            <a class="content-show-full" href = "/2017-12-05/React中的转义字符/" >
                     <h2 class="abstract-title">
                         
-                        <span>为eject后的create-react-app配置ESLint</span>
+                        <span>React中的HTML转义写法</span>
                     </h2>
                 <div class="abstract-content">
-                    问题项目一开始使用的是create-react-app创建的，配置的ESLint是用的AlloyTeam的eslint-config-alloy/react， 默认配置已经很合理了，并且每条配置都有相应的说明，只需要再根据个人喜好修改一些rule即可，我个人修改的.eslintrc.json配置如下
-123456789101112131415161718192021222324252627282930313233343536373839404142&#123;    "extends": [        "eslint-config-alloy/react"    ],    "glo...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = ESLint>ESLint</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/03</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-11-08/HOC/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>基于Decorator的React高阶组件的思路分析与实现</span>
-                    </h2>
-                <div class="abstract-content">
-                    在深入react 技术栈一书中，提到了基于Decorator的HOC。而不是直接通过父组件来逐层传递props，因为当业务逻辑越来越复杂的时候，props的传递和维护也将变得困难且冗余。
-书里对基于Decorator的HOC没有给出完整的实现，在这里实现并记录一下实现的思路。
-整个实现的代码放到了我的Github上，是用来获取豆瓣的电影列表的，npm start即可开箱。
-整体思路
-书里描述的整体思路，先将整个组件，按照view逻辑抽象为互不重叠的最小的原子组件，使组件间组合更自由。在这里最小的组件就是SearchInput SelectInput List。原子组件一定是纯粹的、木偶式...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/08</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-10-28/A Simple React Router v4 Tutorial/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>简明React Router v4教程</span>
-                    </h2>
-                <div class="abstract-content">
-                    简明React Router v4教程React Router v4是一个完全使用React重写的流行的React包，之前版本的React Router配置是使用伪组件也很晦涩难懂。现在使用v4版本的React Router，所有的东西都“仅仅是组件”。
-在这个教程中，我们将建立一个本地的运动队，我们将完成所有的基本需求来建立我们的网站和路由，这包括：
+                    React中的HTML转义写法在JSX中输出固定内容
+直接使用UTF-8字符
+1&lt;div&gt;版权 ©&lt;/div&gt;
 
-选择router
-创建routes
-在路由之间通过链接进行导航
+使用HTML转义字符
 
-代码
-安装React Router现在已经被划分成了三个包：react-router，react-router-dom，react-router-native。
-你不应该...
+
+1&lt;div&gt;版权 &amp;copy;&lt;/div&gt;
+或者十进制的转义字符
+1&lt;div&gt;版权 &amp;#169;&lt;/div&gt;
+动态内容的转义但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义
+
+React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，如果 JSX 中含有转义后的实体字符，比如 &copy;（©），则最后 DOM 中...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -247,45 +185,15 @@
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = react>react</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = javascript>javascript</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/28</span>
-                </div>
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="content-show-full" href = "/2017-10-27/redux to react-redux/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Redux的工作流程教程</span>
-                    </h2>
-                <div class="abstract-content">
-                    redux的工作流程
-使用createStore创建一个管理数据的store。
-1let store = createStore(reducer)
-store的实现：
-123456789101112131415161718192021222324const createStore = (reducer) =&gt; &#123;  let state;  let listeners = [];  const getState = () =&gt; state;  const dispatch = (action) =&gt; &#123;    state = reducer(state...
-                </div>
-            </a>
-            <div class="abstract-post-meta">
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
-    
-</div>
-                
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/27</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/05</span>
                 </div>
             </div>
         </article>
@@ -500,7 +408,20 @@ store的实现：
     
     
     
-    <div class="total-archive"> Total : 15 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 16 </div>
     
     <div class="post-archive">
     
@@ -509,6 +430,11 @@ store的实现：
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/05</span><a class="archive-post-title" href= "/2017-12-05/React中的转义字符/" >React中的HTML转义写法</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -600,9 +526,145 @@ store的实现：
     
         <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
+        <span class="sidebar-tag-name"><a href= "#">react</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">javascript</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">读书</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">hexo</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">hexo-theme-archer</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Hexo</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Javascript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">浏览器</a></span>
+    
+    </div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br/>
+    1、请确保node版本大于6.2<br/>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #888; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: false
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tag-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var jsInfo = {
+        root: '/'
+    }
+</script>
+    <!-- 不蒜子  -->
+    
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    
+    <!-- CNZZ统计  -->
+    
+    </div>
+    </body>
+</html>
+
+
+heme-archer</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "/2017-06-21/client:scroll:offset width:height总结/" >client/scroll/offset width/height总结</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/19</span><a class="archive-post-title" href= "/2017-06-19/SASS的map/" >SASS的map</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/09</span><a class="archive-post-title" href= "/2017-06-09/CSS常用布局方式/" >CSS常用布局方式</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/07</span><a class="archive-post-title" href= "/2017-06-07/CSS TIPS/" >CSS TIPS</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/06</span><a class="archive-post-title" href= "/2017-06-06/HTML5大纲及计算方法/" >HTML5大纲及计算方法</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2017-05-27/AJAX跨域请求分析/" >AJAX跨域请求分析</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2017-04-30/JavaScript高程3笔记/" >JavaScript高程3笔记</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2017-02-07/float理解/" >CSS中的float和clear</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "/2017-02-05/使用githubHexo搭建个人博客/" >使用github+Hexo搭建个人博客</a>
+        </li>
+    
+    </div>
+  </div>
+        <div class="sidebar-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name"><a href= "#">React</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Ajax</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">react</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">javascript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">读书</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
     
