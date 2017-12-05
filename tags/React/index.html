@@ -185,15 +185,149 @@ React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，�
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = react>react</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-href = javascript>javascript</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
                     <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/05</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017-12-03/create-react-app-react-eslint/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>为eject后的create-react-app配置ESLint</span>
+                    </h2>
+                <div class="abstract-content">
+                    问题项目一开始使用的是create-react-app创建的，配置的ESLint是用的AlloyTeam的eslint-config-alloy/react， 默认配置已经很合理了，并且每条配置都有相应的说明，只需要再根据个人喜好修改一些rule即可，我个人修改的.eslintrc.json配置如下
+123456789101112131415161718192021222324252627282930313233343536373839404142&#123;    "extends": [        "eslint-config-alloy/react"    ],    "glo...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = JavaScript>JavaScript</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = ESLint>ESLint</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/03</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017-11-08/HOC/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>基于Decorator的React高阶组件的思路分析与实现</span>
+                    </h2>
+                <div class="abstract-content">
+                    在深入react 技术栈一书中，提到了基于Decorator的HOC。而不是直接通过父组件来逐层传递props，因为当业务逻辑越来越复杂的时候，props的传递和维护也将变得困难且冗余。
+书里对基于Decorator的HOC没有给出完整的实现，在这里实现并记录一下实现的思路。
+整个实现的代码放到了我的Github上，是用来获取豆瓣的电影列表的，npm start即可开箱。
+整体思路
+书里描述的整体思路，先将整个组件，按照view逻辑抽象为互不重叠的最小的原子组件，使组件间组合更自由。在这里最小的组件就是SearchInput SelectInput List。原子组件一定是纯粹的、木偶式...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/11/08</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017-10-28/A Simple React Router v4 Tutorial/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>简明React Router v4教程</span>
+                    </h2>
+                <div class="abstract-content">
+                    简明React Router v4教程React Router v4是一个完全使用React重写的流行的React包，之前版本的React Router配置是使用伪组件也很晦涩难懂。现在使用v4版本的React Router，所有的东西都“仅仅是组件”。
+在这个教程中，我们将建立一个本地的运动队，我们将完成所有的基本需求来建立我们的网站和路由，这包括：
+
+选择router
+创建routes
+在路由之间通过链接进行导航
+
+代码
+安装React Router现在已经被划分成了三个包：react-router，react-router-dom，react-router-native。
+你不应该...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/28</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="content-show-full" href = "/2017-10-27/redux to react-redux/" >
+                    <h2 class="abstract-title">
+                        
+                        <span>Redux的工作流程教程</span>
+                    </h2>
+                <div class="abstract-content">
+                    redux的工作流程
+使用createStore创建一个管理数据的store。
+1let store = createStore(reducer)
+store的实现：
+123456789101112131415161718192021222324const createStore = (reducer) =&gt; &#123;  let state;  let listeners = [];  const getState = () =&gt; state;  const dispatch = (action) =&gt; &#123;    state = reducer(state...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = React>React</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/27</span>
                 </div>
             </div>
         </article>

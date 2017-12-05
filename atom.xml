@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fi3ework.github.io/"/>
-  <updated>2017-12-05T15:55:10.827Z</updated>
+  <updated>2017-12-05T15:58:31.378Z</updated>
   <id>https://fi3ework.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://fi3ework.github.io/2017-12-05/React%E4%B8%AD%E7%9A%84%E8%BD%AC%E4%B9%89%E5%AD%97%E7%AC%A6/"/>
     <id>https://fi3ework.github.io/2017-12-05/React中的转义字符/</id>
     <published>2017-12-05T14:03:32.000Z</published>
-    <updated>2017-12-05T15:55:10.827Z</updated>
+    <updated>2017-12-05T15:58:31.378Z</updated>
     
     <content type="html"><![CDATA[<h2 id="在JSX中输出固定内容"><a href="#在JSX中输出固定内容" class="headerlink" title="在JSX中输出固定内容"></a>在JSX中输出固定内容</h2><ol><li><p>直接使用UTF-8字符</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 ©&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></li><li><p>使用HTML转义字符</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 &amp;copy;&lt;/div&gt;</div></pre></td></tr></table></figure><p>或者十进制的转义字符</p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 &amp;#169;&lt;/div&gt;</div></pre></td></tr></table></figure></li></ol><h2 id="动态内容的转义"><a href="#动态内容的转义" class="headerlink" title="动态内容的转义"></a>动态内容的转义</h2><p>但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义</p><blockquote><p>React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，如果 JSX 中含有转义后的实体字符，比如 &copy;（©），则最后 DOM 中不会正确显示，因为 React 自动把 &copy; 中的特殊字符转义了。</p></blockquote><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 &amp;#169;'</span>&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure><p>错误输出</p><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">版权 &amp;#169;</div></pre></td></tr></table></figure><p>正确写法：</p><ol><li><p>直接使用UTF-8字符仍然可以正确输出</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 ©'</span>&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></li><li><p>安全的做法是使用对应的Unicode码</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 \u00a9'</span>&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></li><li><p>使用<code>fromCharCode</code></p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;<span class="string">'版权 '</span> + <span class="built_in">String</span>.fromCharCode(<span class="number">169</span>)&#125;&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure></li><li><p>使用数组组装</p><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&#123;['版权 ', &lt;span&gt;&amp;#169;&lt;/span&gt;]&#125;&lt;/div&gt;</div></pre></td></tr></table></figure></li><li><p>使用<code>dangerouslySetInnerHTML</code>，可以避免React转义字符</p><figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div dangerouslySetInnerHTML=&#123;&#123; <span class="attr">__html</span>: <span class="string">'版权 &amp;#169;'</span> &#125;&#125; /&gt;</div></pre></td></tr></table></figure></li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><a href="https://shripadk.github.io/react/docs/jsx-gotchas.html#html-entities" target="_blank" rel="external">JSX Gotchas</a></li><li><a href="https://book.douban.com/subject/26918038/" target="_blank" rel="external">深入react技术栈</a></li></ol>]]></content>
     
@@ -37,9 +37,9 @@
     </summary>
     
     
-      <category term="react" scheme="https://fi3ework.github.io/tags/react/"/>
+      <category term="React" scheme="https://fi3ework.github.io/tags/React/"/>
     
-      <category term="javascript" scheme="https://fi3ework.github.io/tags/javascript/"/>
+      <category term="JavaScript" scheme="https://fi3ework.github.io/tags/JavaScript/"/>
     
   </entry>
   
