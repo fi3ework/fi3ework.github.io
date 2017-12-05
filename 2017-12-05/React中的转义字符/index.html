@@ -191,17 +191,17 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="React中的HTML转义写法"><a href="#React中的HTML转义写法" class="headerlink" title="React中的HTML转义写法"></a>React中的HTML转义写法</h2><h3 id="在JSX中输出固定内容"><a href="#在JSX中输出固定内容" class="headerlink" title="在JSX中输出固定内容"></a>在JSX中输出固定内容</h3><ol>
+        <h2 id="在JSX中输出固定内容"><a href="#在JSX中输出固定内容" class="headerlink" title="在JSX中输出固定内容"></a>在JSX中输出固定内容</h2><ol>
 <li><p>直接使用UTF-8字符</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 ©&lt;<span class="regexp">/div&gt;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>使用HTML转义字符</p>
 </li>
 </ol>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 &amp;copy;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 &amp;copy;&lt;/div&gt;</div></pre></td></tr></table></figure>
 <p>或者十进制的转义字符</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;版权 &amp;#169;&lt;/div&gt;</div></pre></td></tr></table></figure>
-<h3 id="动态内容的转义"><a href="#动态内容的转义" class="headerlink" title="动态内容的转义"></a>动态内容的转义</h3><p>但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义</p>
+<h2 id="动态内容的转义"><a href="#动态内容的转义" class="headerlink" title="动态内容的转义"></a>动态内容的转义</h2><p>但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义</p>
 <blockquote>
 <p>React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，如果 JSX 中含有转义后的实体字符，比如 &copy;（©），则最后 DOM 中不会正确显示，因为 React 自动把 &copy; 中的特殊字符转义了。</p>
 </blockquote>
@@ -324,7 +324,7 @@
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#React中的HTML转义写法"><span class="toc-number">1.</span> <span class="toc-text">React中的HTML转义写法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在JSX中输出固定内容"><span class="toc-number">1.1.</span> <span class="toc-text">在JSX中输出固定内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动态内容的转义"><span class="toc-number">1.2.</span> <span class="toc-text">动态内容的转义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">2.</span> <span class="toc-text">参考</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#在JSX中输出固定内容"><span class="toc-number">1.</span> <span class="toc-text">在JSX中输出固定内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#动态内容的转义"><span class="toc-number">2.</span> <span class="toc-text">动态内容的转义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考"><span class="toc-number">3.</span> <span class="toc-text">参考</span></a></li></ol>
     </div>
     
     <div class="back-top">&#xe639;</div>

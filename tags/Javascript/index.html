@@ -159,23 +159,25 @@
     
     
         <article class="index-post">
-            <a class="content-show-full" href = "/2017-10-08/页面生命周期：DOMContentLoaded, load, beforeunload, unload/" >
+            <a class="content-show-full" href = "/2017-12-05/React中的转义字符/" >
                     <h2 class="abstract-title">
                         
-                        <span>页面生命周期：DOMContentLoaded, load, beforeunload, unload</span>
+                        <span>React中的HTML转义写法</span>
                     </h2>
                 <div class="abstract-content">
-                    原文地址：http://javascript.info/onload-ondomcontentloaded
-HTML页面的生命周期有以下三个重要事件：
+                    在JSX中输出固定内容
+直接使用UTF-8字符
+1&lt;div&gt;版权 ©&lt;/div&gt;
 
-DOMContentLoaded — 浏览器已经完全加载了HTML，DOM树已经构建完毕，但是像是  &lt;img&gt; 和样式表等外部资源可能并没有下载完毕。  
-load — 浏览器已经加载了所有的资源（图像，样式表等）。
-beforeunload/unload – 当用户离开页面的时候触发。
+使用HTML转义字符
 
-每个事件都有特定的用途
 
-DOMContentLoaded – DOM加载完毕，所以js可以访问所有DOM节点，初始化界面。
-load...
+1&lt;div&gt;版权 &amp;copy;&lt;/div&gt;
+或者十进制的转义字符
+1&lt;div&gt;版权 &amp;#169;&lt;/div&gt;
+动态内容的转义但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义
+
+React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，如果 JSX 中含有转义后的实体字符，比如 &copy;（©），则最后 DOM 中不会正确显示，因为 React...
                 </div>
             </a>
             <div class="abstract-post-meta">
@@ -183,15 +185,15 @@ load...
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-href = Javascript>Javascript</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = react>react</a>
     
-        <a class="post-tag" href="javascript:void(0);" data-href = 浏览器>浏览器</a>
+        <a class="post-tag" href="javascript:void(0);" data-href = javascript>javascript</a>
     
 </div>
                 
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/10/08</span>
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/12/05</span>
                 </div>
             </div>
         </article>
@@ -465,135 +467,6 @@ load...
         </li>
     
     
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "/2017-06-21/client:scroll:offset width:height总结/" >client/scroll/offset width/height总结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/19</span><a class="archive-post-title" href= "/2017-06-19/SASS的map/" >SASS的map</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/09</span><a class="archive-post-title" href= "/2017-06-09/CSS常用布局方式/" >CSS常用布局方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/07</span><a class="archive-post-title" href= "/2017-06-07/CSS TIPS/" >CSS TIPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/06</span><a class="archive-post-title" href= "/2017-06-06/HTML5大纲及计算方法/" >HTML5大纲及计算方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2017-05-27/AJAX跨域请求分析/" >AJAX跨域请求分析</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2017-04-30/JavaScript高程3笔记/" >JavaScript高程3笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2017-02-07/float理解/" >CSS中的float和clear</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "/2017-02-05/使用githubHexo搭建个人博客/" >使用github+Hexo搭建个人博客</a>
-        </li>
-    
-    </div>
-  </div>
-        <div class="sidebar-tags">
-    <div class="sidebar-tags-name">
-    
-        <span class="sidebar-tag-name"><a href= "#">React</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Ajax</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">react</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">javascript</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">读书</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">hexo</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">hexo-theme-archer</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Hexo</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Javascript</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">浏览器</a></span>
-    
-    </div>
-    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
-    缺失模块。<br/>
-    1、请确保node版本大于6.2<br/>
-    2、在博客根目录（注意不是archer根目录）执行以下命令：<br/>
-    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br/>
-    3、在根目录_config.yml里添加配置：
-    <pre style="color: #888; font-size: 0.6rem;">
-jsonContent:
-  meta: false
-  pages: false
-  posts:
-    title: true
-    date: true
-    path: true
-    text: false
-    raw: false
-    content: false
-    slug: false
-    updated: false
-    comments: false
-    link: false
-    permalink: false
-    excerpt: false
-    categories: false
-    tags: true</pre>
-    </div> 
-    <div class="sidebar-tag-list"></div>
-</div>
-    </div>
-</div> 
-    <script>
-    var jsInfo = {
-        root: '/'
-    }
-</script>
-    <!-- 不蒜子  -->
-    
-    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
-    <!-- CNZZ统计  -->
-    
-    </div>
-    </body>
-</html>
-
-
-   
         <li class="archive-post-item">
             <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "/2017-06-21/client:scroll:offset width:height总结/" >client/scroll/offset width/height总结</a>
         </li>
