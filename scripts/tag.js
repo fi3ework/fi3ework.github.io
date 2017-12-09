@@ -22,30 +22,28 @@ function queryString () {
   return queryObj
 }
 
-// 绑定点击dom
-
+// 显示对应的post
 var filterPostByTag = function (tag) {
   var allPostItem = document.getElementsByClassName('post-item')
+  // 过滤post
   Array.prototype.forEach.call(allPostItem, function (postItem) {
     var postTags = postItem.getAttribute('data-tags')
     var tagArray = postTags.split('%+%')
-    // console.log(tagArray)
-    // console.log(tag)
-    if (tagArray.indexOf(tag) < 0) {
-      console.log('hidd')
-      postItem.style.display = 'none'
-    } else {
-      console.log('show')
+    if (tagArray.indexOf(tag) >= 0 || tag === '' || typeof tag === 'undefined') {
       postItem.style.display = 'block'
+    } else {
+      postItem.style.display = 'none'
     }
   })
+
+  // 过滤年份
 }
 
+// 绑定点击dom
 var onClickTag = function (e) {
   var currTag
   if (['tag'].indexOf(e.target.className) >= 0) {
     currTag = e.target.getAttribute('data-tag')
-    console.log(currTag)
     window.history.replaceState(null, '', window.location.href.split('?')[0] + '?tag=' + currTag)
     filterPostByTag(currTag)
   }
