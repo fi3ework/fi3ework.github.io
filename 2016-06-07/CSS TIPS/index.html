@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>CSS TIPS | firework's Studio</title><meta name="description" content="CSS TIPS - Wee"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/theme.css"><link rel="search" type="application/opensearchdescription+xml" href="/atom.xml" title="firework's Studio"></head><body><div class="wrap"><header><h1 class="branding"><a href="/" title="firework's Studio">firework's Studio</a></h1><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">HOME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/archives/index.html" target="_self">ARCHIVES</a></li><li class="nav-list-item"><a class="nav-list-link" href="/about" target="_self">ABOUT</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">CSS TIPS</h1><div class="post-info">2017/06/07</div><div class="post-content"><h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><ul>
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>CSS TIPS | firework's Studio</title><meta name="description" content="CSS TIPS - Wee"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/theme.css"><link rel="search" type="application/opensearchdescription+xml" href="/atom.xml" title="firework's Studio"></head><body><div class="wrap"><header><h1 class="branding"><a href="/" title="firework's Studio">firework's Studio</a></h1><ul class="nav nav-list"><li class="nav-list-item"><a class="nav-list-link" href="/" target="_self">HOME</a></li><li class="nav-list-item"><a class="nav-list-link" href="/archives/index.html" target="_self">ARCHIVES</a></li><li class="nav-list-item"><a class="nav-list-link" href="/about" target="_self">ABOUT</a></li><li class="nav-list-item"><a class="nav-list-link" href="/atom.xml" target="_self">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">CSS TIPS</h1><div class="post-info">2016/06/07</div><div class="post-content"><h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><ul>
 <li><p>当网页中的内容较少时，html元素可能无法覆盖整个浏览器的高度，通过设置</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span>&#123;</div><div class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>即可将整个页面撑开到浏览器的高度。</p>
@@ -87,7 +87,7 @@
 </li>
 <li><p><code>line-height</code>的属性继承需要注意。假设父元素的<code>font-size</code>为<code>20px</code>，子元素<code>font-size</code>为<code>40px</code>，父元素<code>line-height</code>设为<code>120%</code>或<code>1.2em</code>，<strong>则子元素继承的是父元素计算出来的行高的<code>px</code>值，而不是百分比</strong>，所以子元素的行高会等于20 * 1.2 = 24px而与子元素的<code>font-size</code>完全没有关系。</p>
 <p> 如图所示。</p>
-<p> <img src="/2017-06-07/CSS TIPS/line-height-inherit.png" alt="line-height inherit"></p>
+<p> <img src="/2016-06-07/CSS TIPS/line-height-inherit.png" alt="line-height inherit"></p>
 <p> 所以如果希望实现按比例继承，直接使用<code>line-height: 1.5;</code>，这样子元素的行高将等于这个继承的比例乘以自己<code>font-size</code>。</p>
 </li>
 <li><p>设置单行文本（内联或块级元素时）的高度时，可以直接使用<code>line-height</code>来设置高度，好处是能够保持文本垂直居中。</p>
@@ -99,7 +99,7 @@
 </li>
 </ul>
 <h3 id="overflow-hidden"><a href="#overflow-hidden" class="headerlink" title="overflow: hidden"></a>overflow: hidden</h3><ul>
-<li>ovh会使延伸到浮动下方的背景和边框消失，消失是从进入浮动元素的margin范围就开始生效。如图，红块具有<code>margin</code>，h1延伸到浮动元素<code>margin</code>的时候就开始截断了。<img src="/2017-06-07/CSS TIPS/ovh hidden bgc.png" alt="ovh hidden bgc"></li>
+<li>ovh会使延伸到浮动下方的背景和边框消失，消失是从进入浮动元素的margin范围就开始生效。如图，红块具有<code>margin</code>，h1延伸到浮动元素<code>margin</code>的时候就开始截断了。<img src="/2016-06-07/CSS TIPS/ovh hidden bgc.png" alt="ovh hidden bgc"></li>
 </ul>
 <h3 id="text-transform"><a href="#text-transform" class="headerlink" title="text-transform"></a>text-transform</h3><ul>
 <li><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">capitalize | uppercase | lowercase | (full-width)</div></pre></td></tr></table></figure>
@@ -117,7 +117,7 @@
 <li><p>行内元素每一行都是叠加在上一行之上的，所以如果对下面的行内元素设置<code>padding</code>会覆盖上面的行内元素，这个覆盖是依照HTML中的顺序决定，而不是浏览器中渲染的位置决定的。</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">h1</span>&gt;</span>Andy Budd<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></div><div class="line">    Andy is the Managing Director of Clearleft. He also goes by the title of User Experience Director depending what mood</div><div class="line">    he’s in. Andy is the author of <span class="tag">&lt;<span class="name">em</span>&gt;</span>CSS Mastery<span class="tag">&lt;/<span class="name">em</span>&gt;</span>, curates the dConstruct and UX London events and is responsible for Silverbackapp,</div><div class="line">    our low cost usability testing application for the Mac.<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">"sp1"</span>&gt;</span>lower<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
 <p>如图，lower在HTML在黄字之后，但是通过css的设置排在了黄字上面，不过lower还是覆盖了黄字。</p>
-<p><img src="/2017-06-07/CSS TIPS/inline-cover.png" alt="inline-cover"></p>
+<p><img src="/2016-06-07/CSS TIPS/inline-cover.png" alt="inline-cover"></p>
 <p>​</p>
 </li>
 </ul>
@@ -127,16 +127,16 @@
 <li><p>外边距发生叠加的几种情况：</p>
 <ul>
 <li><p>普通外边距叠加</p>
-<p><img src="/2017-06-07/CSS TIPS/./CSS TIPS/margin collapse 1.png" alt="margin collapse 1"></p>
+<p><img src="/2016-06-07/CSS TIPS/./CSS TIPS/margin collapse 1.png" alt="margin collapse 1"></p>
 </li>
 <li><p>空元素（没有边框和内边距将两个外边距分隔开）</p>
-<p><img src="/2017-06-07/CSS TIPS/./CSS TIPS/margin collapse 2.png" alt="margin collapse 1"></p>
+<p><img src="/2016-06-07/CSS TIPS/./CSS TIPS/margin collapse 2.png" alt="margin collapse 1"></p>
 </li>
 <li><p>空元素（自身的<code>margin-top</code>和<code>margin-bottom</code>折叠了）</p>
-<p><img src="/2017-06-07/CSS TIPS/./CSS TIPS/margin collapse 3.png" alt="margin collapse 1"></p>
+<p><img src="/2016-06-07/CSS TIPS/./CSS TIPS/margin collapse 3.png" alt="margin collapse 1"></p>
 </li>
 <li><p>叠加之后的外边距只要满足条件就可以继续叠加</p>
-<p><img src="/2017-06-07/CSS TIPS/./CSS TIPS/margin collapse 4.png" alt="margin collapse 1"></p>
+<p><img src="/2016-06-07/CSS TIPS/./CSS TIPS/margin collapse 4.png" alt="margin collapse 1"></p>
 </li>
 </ul>
 </li>
@@ -191,7 +191,7 @@
 </li>
 <li>覆盖</li>
 </ul>
-</div></article></div></main><footer><div class="paginator"><a class="prev" href="/2017-06-09/CSS常用布局方式/">prev</a><a class="next" href="/2017-06-06/HTML5大纲及计算方法/">next</a></div><div id="lv-container" data-id="city" data-uid="MTAyMC8yODQyOS81MDAw"><script type="text/javascript">(function(d, s) {
+</div></article></div></main><footer><div class="paginator"><a class="prev" href="/2016-10-28/A Simple React Router v4 Tutorial/">prev</a><a class="next" href="/2016-05-27/AJAX跨域请求分析/">next</a></div><div id="lv-container" data-id="city" data-uid="MTAyMC8yODQyOS81MDAw"><script type="text/javascript">(function(d, s) {
 var j, e = d.getElementsByTagName(s)[0];
 
 if (typeof LivereTower === 'function') { return; }

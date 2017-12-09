@@ -37,18 +37,36 @@ var filterPostByTag = function (tag) {
   })
 
   // 过滤年份
+  var yearSections = document.getElementsByClassName('year-section')
+  Array.prototype.forEach.call(yearSections, function (section) {
+    var isAllHidden = true
+    var posts = section.getElementsByClassName('post-item')
+    isAllHidden = Array.prototype.every.call(posts, function (post) {
+      return window.getComputedStyle(post).getPropertyValue('display') === 'none'
+    })
+    if (isAllHidden) {
+      section.style.display = 'none'
+    } else {
+      section.style.display = 'block'
+    }
+  })
 }
 
 // 绑定点击dom
 var onClickTag = function (e) {
   var currTag
-  if (['tag'].indexOf(e.target.className) >= 0) {
-    currTag = e.target.getAttribute('data-tag')
+  var targetClassname = e.target.className
+  if (['tag', 'tagCount'].indexOf(targetClassname) >= 0) {
+    if (e.target.getAttribute('data-tag') == null) {
+      currTag = e.target.parentNode.getAttribute('data-tag')
+    } else {
+      currTag = e.target.getAttribute('data-tag')
+    }
+
     window.history.replaceState(null, '', window.location.href.split('?')[0] + '?tag=' + currTag)
     filterPostByTag(currTag)
   }
 }
-
 var tags = document.getElementsByClassName('tags')[0]
 tags.addEventListener('click', onClickTag)
 
