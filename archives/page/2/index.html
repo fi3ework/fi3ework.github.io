@@ -24,7 +24,7 @@
             width: 100%;
             height: 50vh;
             overflow: hidden;
-            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.8);
+            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.5);
         }
         .site-intro-placeholder {
             position: absolute;
@@ -47,7 +47,7 @@
         }
     }
 </style>
-    <link rel="stylesheet" href = /css/style.css?v=20171218 />
+    <link rel="stylesheet" href = /css/style.css?v=20171227 />
     <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
     
     <script src="/scripts/main.js" defer></script>
@@ -57,7 +57,7 @@
         var _hmt = _hmt || [];
         (function () {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510";
+        hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
         })();
@@ -66,6 +66,7 @@
     <!-- 谷歌统计  -->
     
 </head>
+
     
     
 <header class="header">
@@ -167,11 +168,41 @@
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-06-19/SASS的map/" >
+                
+                    <span>SASS的map</span>
+            </a>
+            <a class="content-show-full" href = "/2017-06-19/SASS的map/" >
+                <div class="abstract-content">
+                    今天在看SASS中文网时发现Maps没有翻译，就顺便翻译一下。
+
+6.3.3. MapsMaps represent an association between keys and values, where keys are used to look up values. They make it easy to collect values into named groups and access those groups dynamically. They have no direct parallel in CSS, although they’re syntactically ...
+                </div>
+            </a>
+            <div class="abstract-post-meta">
+                <!-- tags  -->
+                
+                <div class= abstract-tags >
+    
+        <a class="post-tag" href="javascript:void(0);" data-href = SASS>SASS</a>
+    
+</div>
+                
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer"></span><span class="abstract-time">2017/06/19</span>
+                </div>
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017-06-09/CSS常用布局方式/" >
+                
+                    <span>CSS常用布局方式</span>
+            </a>
             <a class="content-show-full" href = "/2017-06-09/CSS常用布局方式/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>CSS常用布局方式</span>
-                    </h2>
                 <div class="abstract-content">
                     高度相等的列  
   思路：三列浮动布局，给每列一个很大的padding-bottom，然后每列的margin-bottom比padding-bottom稍小，外面包裹的wrapper就会被最高的一列撑起来。
@@ -192,11 +223,11 @@
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-06-07/CSS TIPS/" >
+                
+                    <span>CSS TIPS</span>
+            </a>
             <a class="content-show-full" href = "/2017-06-07/CSS TIPS/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>CSS TIPS</span>
-                    </h2>
                 <div class="abstract-content">
                     html
 当网页中的内容较少时，html元素可能无法覆盖整个浏览器的高度，通过设置
@@ -234,11 +265,11 @@ CSS被缓存之后，可以通过如下方法，使之前的缓存失效
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-06-06/HTML5大纲及计算方法/" >
+                
+                    <span>HTML5大纲及计算方法</span>
+            </a>
             <a class="content-show-full" href = "/2017-06-06/HTML5大纲及计算方法/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>HTML5大纲及计算方法</span>
-                    </h2>
                 <div class="abstract-content">
                     HTML5大纲及计算方法HTML5的好处
 在HTML4中定义章节性段落往往需要&lt;div&gt;，但&lt;div&gt;有时又扮演着表达样式的作用，所以在HTML4中章节的定义和范围都是不精确的。在HTML5中，&lt;div&gt;不再计入大纲算法。
@@ -267,11 +298,11 @@ CSS被缓存之后，可以通过如下方法，使之前的缓存失效
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-05-27/AJAX跨域请求分析/" >
+                
+                    <span>AJAX跨域请求分析</span>
+            </a>
             <a class="content-show-full" href = "/2017-05-27/AJAX跨域请求分析/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>AJAX跨域请求分析</span>
-                    </h2>
                 <div class="abstract-content">
                     AJAX跨域请求分析引出首先看一段原生调用AJAX的代码，
 1234567891011121314//原生调用AJAXlet xhr = new XMLHttpRequest();let url1 = "https://free-api.heweather.com/v5/now?city=beijing&amp;key=dce751438a22402b9c8c1fcb95e3ce82"let url2 = "http://api.k780.com/?app=weather.future&amp;weaid=1&amp;appkey=25688&amp;sign=f1b67fe3f11c6...
@@ -298,11 +329,11 @@ CSS被缓存之后，可以通过如下方法，使之前的缓存失效
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-04-30/JavaScript高程3笔记/" >
+                
+                    <span>JavaScript高程3笔记</span>
+            </a>
             <a class="content-show-full" href = "/2017-04-30/JavaScript高程3笔记/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>JavaScript高程3笔记</span>
-                    </h2>
                 <div class="abstract-content">
                     Chapter11.21.2.2
 
@@ -338,11 +369,11 @@ DOM2 级在原来 DOM 的基础上又扩充了（DHTML 一直都支持的）鼠�
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-02-07/float理解/" >
+                
+                    <span>CSS中的float和clear</span>
+            </a>
             <a class="content-show-full" href = "/2017-02-07/float理解/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>CSS中的float和clear</span>
-                    </h2>
                 <div class="abstract-content">
                     CSS中的float和clear引言float是CSS中相当重要的属性，很惭愧只学了个皮毛，找个机会认真的学习一下float，以后就不要再在float的坑中摔倒了，那么开始。
 1. float的定义从网上搜了一个中文版对float的定义，出处已无法考证
@@ -373,11 +404,11 @@ The float CSS property specifies that an element should be taken from the normal
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-02-05/使用githubHexo搭建个人博客/" >
+                
+                    <span>使用github+Hexo搭建个人博客</span>
+            </a>
             <a class="content-show-full" href = "/2017-02-05/使用githubHexo搭建个人博客/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>使用github+Hexo搭建个人博客</span>
-                    </h2>
                 <div class="abstract-content">
                     引言之前一直使用CSDN Blog来写博客，但是对于一个颜控来说CSDN的界面实在是有点丑陋😏，就转头了GitHub Pages，配合Hexo搭建完成。在这个博客的第一篇博文就记录一下这个博客是如何搭建成的好了。
 正文本博客搭建的方法参考 GitHub Pages + Hexo搭建博客，在这里对原作者表示感谢。原作者的方案有一点是很好的，就是在原仓库username.github.io.git中再开一条hexo分支来管理hexo的部署，这样即使不在常用的电脑身边也可以管理博客，而且在hexo init之后路径下会自动生成.gitignore文件，其本意也就是鼓励我们使用GitHub来进...
@@ -445,7 +476,7 @@ The float CSS property specifies that an element should be taken from the normal
     <!-- 不蒜子  -->
     
     <div class="busuanzi-container">
-        <span id="busuanzi_container_site_pv">Welcome, No. <span id="busuanzi_value_site_pv"></span> visitor.
+        <span id="busuanzi_container_site_pv">VISITOR VOLUME: <span id="busuanzi_value_site_pv"></span>
         </span>
     </div>
     
@@ -639,7 +670,20 @@ The float CSS property specifies that an element should be taken from the normal
     
     
     
-    <div class="total-archive"> Total : 17 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 18 </div>
     
     <div class="post-archive">
     
@@ -648,6 +692,11 @@ The float CSS property specifies that an element should be taken from the normal
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2017-12-31/2017/" >to 2017</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -747,11 +796,11 @@ The float CSS property specifies that an element should be taken from the normal
     
         <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">读书</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
     
@@ -764,6 +813,8 @@ The float CSS property specifies that an element should be taken from the normal
         <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">浏览器</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">生活</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">

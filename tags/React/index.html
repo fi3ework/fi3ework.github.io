@@ -24,7 +24,7 @@
             width: 100%;
             height: 50vh;
             overflow: hidden;
-            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.8);
+            box-shadow: -0.1rem 0 0.5rem 0 rgba(0, 0, 0, 0.5);
         }
         .site-intro-placeholder {
             position: absolute;
@@ -47,7 +47,7 @@
         }
     }
 </style>
-    <link rel="stylesheet" href = /css/style.css?v=20171218 />
+    <link rel="stylesheet" href = /css/style.css?v=20171227 />
     <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
     
     <script src="/scripts/main.js" defer></script>
@@ -57,7 +57,7 @@
         var _hmt = _hmt || [];
         (function () {
         var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510";
+        hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510";
         var s = document.getElementsByTagName("script")[0];
         s.parentNode.insertBefore(hm, s);
         })();
@@ -66,6 +66,7 @@
     <!-- 谷歌统计  -->
     
 </head>
+
     
     
 <header class="header">
@@ -167,11 +168,11 @@
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-12-05/React中的转义字符/" >
+                
+                    <span>React中的HTML转义写法</span>
+            </a>
             <a class="content-show-full" href = "/2017-12-05/React中的转义字符/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>React中的HTML转义写法</span>
-                    </h2>
                 <div class="abstract-content">
                     在JSX中输出固定内容
 直接使用UTF-8字符
@@ -209,11 +210,11 @@ React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，�
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-12-03/create-react-app-react-eslint/" >
+                
+                    <span>为eject后的create-react-app配置ESLint</span>
+            </a>
             <a class="content-show-full" href = "/2017-12-03/create-react-app-react-eslint/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>为eject后的create-react-app配置ESLint</span>
-                    </h2>
                 <div class="abstract-content">
                     问题项目一开始使用的是create-react-app创建的，配置的ESLint是用的AlloyTeam的eslint-config-alloy/react， 默认配置已经很合理了，并且每条配置都有相应的说明，只需要再根据个人喜好修改一些rule即可，我个人修改的.eslintrc.json配置如下
 123456789101112131415161718192021222324252627282930313233343536373839404142&#123;    "extends": [        "eslint-config-alloy/react"    ],    "glo...
@@ -242,11 +243,11 @@ React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，�
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-11-08/HOC/" >
+                
+                    <span>基于Decorator的React高阶组件的思路分析与实现</span>
+            </a>
             <a class="content-show-full" href = "/2017-11-08/HOC/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>基于Decorator的React高阶组件的思路分析与实现</span>
-                    </h2>
                 <div class="abstract-content">
                     在深入react 技术栈一书中，提到了基于Decorator的HOC。而不是直接通过父组件来逐层传递props，因为当业务逻辑越来越复杂的时候，props的传递和维护也将变得困难且冗余。
 书里对基于Decorator的HOC没有给出完整的实现，在这里实现并记录一下实现的思路。
@@ -274,11 +275,11 @@ React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，�
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-10-28/A Simple React Router v4 Tutorial/" >
+                
+                    <span>简明React Router v4教程</span>
+            </a>
             <a class="content-show-full" href = "/2017-10-28/A Simple React Router v4 Tutorial/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>简明React Router v4教程</span>
-                    </h2>
                 <div class="abstract-content">
                     简明React Router v4教程React Router v4是一个完全使用React重写的流行的React包，之前版本的React Router配置是使用伪组件也很晦涩难懂。现在使用v4版本的React Router，所有的东西都“仅仅是组件”。
 在这个教程中，我们将建立一个本地的运动队，我们将完成所有的基本需求来建立我们的网站和路由，这包括：
@@ -311,11 +312,11 @@ React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，�
     
     
         <article class="index-post">
+            <a class="abstract-title" href = "/2017-10-27/redux to react-redux/" >
+                
+                    <span>Redux的工作流程教程</span>
+            </a>
             <a class="content-show-full" href = "/2017-10-27/redux to react-redux/" >
-                    <h2 class="abstract-title">
-                        
-                        <span>Redux的工作流程教程</span>
-                    </h2>
                 <div class="abstract-content">
                     redux的工作流程
 使用createStore创建一个管理数据的store。
@@ -380,7 +381,7 @@ store的实现：
     <!-- 不蒜子  -->
     
     <div class="busuanzi-container">
-        <span id="busuanzi_container_site_pv">Welcome, No. <span id="busuanzi_value_site_pv"></span> visitor.
+        <span id="busuanzi_container_site_pv">VISITOR VOLUME: <span id="busuanzi_value_site_pv"></span>
         </span>
     </div>
     
@@ -574,7 +575,20 @@ store的实现：
     
     
     
-    <div class="total-archive"> Total : 17 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 18 </div>
     
     <div class="post-archive">
     
@@ -583,6 +597,11 @@ store的实现：
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2017-12-31/2017/" >to 2017</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -682,11 +701,11 @@ store的实现：
     
         <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">读书</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
     
@@ -699,6 +718,8 @@ store的实现：
         <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">浏览器</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">生活</a></span>
     
     </div>
     <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
