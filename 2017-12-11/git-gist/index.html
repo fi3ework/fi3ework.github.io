@@ -217,7 +217,8 @@
 </ul>
 <p><strong>场景：</strong>在完成了一次本地commit之后，对这次commit不是十分满意，想要撤销这条commit记录</p>
 <p><strong>方法：</strong><code>git reset &lt;last good SHA&gt;</code> 或 <code>git reset --hard &lt;last good SHA&gt;</code></p>
-<p><strong>原理：</strong><code>git reset</code> 会把你的代码库历史返回到指定的 SHA 状态。 这样就像是这些提交从来没有发生过。缺省情况下，撤销的commit的修改的代码将会恢复到工作区，对应的commit的记录被撤销掉。如果加了<code>--hard</code>，那么撤销的commit的代码也会消失掉。</p>
+<p><strong>原理：</strong><code>git reset</code> 会把你的代码库历史返回到指定的 SHA 状态。 这样就像是这些提交从来没有发生过。缺省情况下，撤销的commit的修改的代码将会恢复到工作区，对应的commit的记录被撤销掉。如果加了<code>--hard</code>，那么撤销的commit的代码也会消失掉。如果想一并撤销远端的提交，使用<code>git push origin master --force</code>或者<code>git push -f origin master</code>即可，sourceTree里也有开启force push的选项。</p>
+<p><strong>参考：</strong><a href="https://stackoverflow.com/questions/10510462/force-git-push-to-overwrite-remote-files" target="_blank" rel="external">Force “git push” to overwrite remote files</a></p>
 <ul>
 <li><strong>合并远端新建的的分支</strong><ul>
 <li><a href="http://blog.csdn.net/lindexi_gd/article/details/52554159" target="_blank" rel="external">http://blog.csdn.net/lindexi_gd/article/details/52554159</a></li>
@@ -229,6 +230,13 @@
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
+        
+            <li class="next">
+                <a href= "/2017-12-31/2017/" title= to 2017 >
+                    <span>Next Post</span>
+                    <span>to 2017</span>
+                </a>
+            </li>
         
         
             <li class="previous">
@@ -506,7 +514,20 @@
     
     
     
-    <div class="total-archive"> Total : 17 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 18 </div>
     
     <div class="post-archive">
     
@@ -515,6 +536,11 @@
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2017-12-31/2017/" >to 2017</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -608,13 +634,13 @@
     
         <span class="sidebar-tag-name"><a href= "#">生活</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Ajax</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">React</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Ajax</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
     
@@ -624,13 +650,13 @@
     
         <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">hexo</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">hexo-theme-archer</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">Hexo</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">hexo</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">hexo-theme-archer</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">浏览器</a></span>
     

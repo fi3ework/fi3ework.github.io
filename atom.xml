@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fi3ework.github.io/"/>
-  <updated>2017-12-12T13:16:58.151Z</updated>
+  <updated>2018-01-02T12:35:20.245Z</updated>
   <id>https://fi3ework.github.io/</id>
   
   <author>
@@ -17,13 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>to 2017</title>
+    <link href="https://fi3ework.github.io/2017-12-31/2017/"/>
+    <id>https://fi3ework.github.io/2017-12-31/2017/</id>
+    <published>2017-12-31T12:40:07.000Z</published>
+    <updated>2018-01-02T12:35:20.245Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写什么年记啊"><a href="#写什么年记啊" class="headerlink" title="写什么年记啊"></a>写什么年记啊</h2><p>前些年的时候，大概是在两年前，有一天突发奇想打算写日记，记录自己每天的感悟，希望自己以后能回顾心路历程，经过一番比较，花了30块在App Store买了One Day，Markdown语法，跨三端，不会被墙，简直完美。大概坚持了5天，我就把自己曾经买了这个应用的事情完全忘记了，留下了平均造价六块钱的五篇电子日记。</p><p>然后我就发现我并不适合做写日记这么勤劳的事情，周记的频度也太高，月记的话倒是可行，不过估计也是会有月记不调。还是写年记吧，一方面是频度足够低，另一方面是人群都处于一种告别过去一年的状态，从众的心态很容易提醒我，又一年过去了，大家都在「别管快乐不快乐还是只是为了发个朋友圈」的告别过去的一年，也一起来吧。</p><p>这是第一篇年记，希望还能有2018的年记，如果没有的话，那说明我的年记与五年一度的大会节奏一致。</p><h2 id="跨年的仪式感更强啊"><a href="#跨年的仪式感更强啊" class="headerlink" title="跨年的仪式感更强啊"></a>跨年的仪式感更强啊</h2><p>相比过年，我觉得跨年的仪式感更强。一方面是因为每年过年的时间是不一样的，这给我一种很随意的感觉，这也是我极度抵制阴历生日的原因。另一方面是过年只是中国才有的节日，但跨年是全世界人民同时的狂欢，准确的说是某时区人民同时的狂欢。不管怎么说，单单从日历上看，跨年也给了我足够的仪式感（而且过年好麻烦啊🙂）。</p><h2 id="写什么前端啊"><a href="#写什么前端啊" class="headerlink" title="写什么前端啊"></a>写什么前端啊</h2><p>从大概二月份开始撸<del>大</del>前端，还不包括没有记录在案的在2016年的国庆节在床上躺着看完了「Head First HTML与CSS、XHTML」的那本书（怀念一下在天国的XHTML），撸html，撸CSS，撸js，撸Nodejs，撸React，撸出了个Hexo的主题，放在了Github上，也算是一直用心在维护，得了一百多个star，算是今年比较值得自己骄傲的事情吧，撸完之后我就感觉<del>（贤者模式）</del>，有些人问前端怎么自学做一些入门项目，其实撸个Hexo(Jekyll)的主题是坠吼的，UI设计+语义化html+响应式设计+css(scss)+dom操作+性能优化+Webpack+gulp+Ajax，高兴的话还可以用mvvm的框架撸，想练什么都可以，做完还能吃自己的狗粮主题再放到Github上骗一波star，这种操作就问你滋补滋磁啊。</p><p>10月份左右用React撸了个<del>高仿的</del>豆瓣电影，一会儿写完年记赶在2018到来前传到Github上，本来一开始撸得兴致盎然，但越撸到后面越恶心，充分证明了小撸怡情，大撸伤身，樯橹灰飞烟灭——各种重复的业务逻辑，然后就开始抽象，重构，抽象，重构，抽公共组件，简化逻辑，为了不让自己放弃，索性把微信签名都换成了「DON’T REPEAT YOURSELF」，可以说是superDRY的一个男子了，截止到2017年的最后一天算是抽完了逻辑，不过多少有些不可维护的感觉，明年看完「深入React技术栈」，再看看能不能撸得更优雅一些吧。</p><p>附一张2017年的Github star的图，我有个习惯就是先在本地提交，整体做的差不多了删掉<code>.git</code><del>（清爽！）</del>。重新开仓库再push到Github上，所以在做<code>hexo-theme-archer</code>的时候少了很多次的提交，不过剩下的这些提交里有好多是blog的提交（逃）</p><p><img src="http://oumn0o088.bkt.clouddn.com/2017-star.jpg" alt="2017-star"></p><h2 id="更不能写C艹啊"><a href="#更不能写C艹啊" class="headerlink" title="更不能写C艹啊"></a>更不能写C艹啊</h2><p>是的，我基本已经不会写C++了，不<del>知道</del>是好事<del>还是坏事</del>，虽然工作中每天对着的都是C++，但是讲道理工作时基本都是在维护一些陈旧的代码（其中也包括自己写的一些操蛋的代码），偶尔也会燃起一点想用更优雅的方式重构一下的热情，但是很快就被我贫乏的C++语法知识浇灭了，老老实实的多些两行注释显得更加实际。</p><h2 id="那他娘的写啥啊"><a href="#那他娘的写啥啊" class="headerlink" title="那他娘的写啥啊"></a>那他娘的写啥啊</h2><p>那当然还是写JavaScript啦，明年也要学Nodejs，还有先把看了N遍还TMD没看明白的<code>redux-saga</code>看懂，也许会再学一点python做做自动化脚本（反正和js差不多），还有shell（shell还用学？），也许有余力会学一点TypeScript（不过见过的TypeScript都是用在企业级大项目上），最后争取开始做可视化方面的东西，目标定太多不好，就先这样。</p><h2 id="人傻多看书啊"><a href="#人傻多看书啊" class="headerlink" title="人傻多看书啊"></a>人傻多看书啊</h2><p>今年还是看了不少书的，</p><ol><li><p>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F3040870%2F&amp;query=Head+First+HTML%E4%B8%8ECSS%E3%80%81XHTML&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">Head First HTML与CSS、XHTML（中文版）</a>』（明明是去年看完的书被强行拉过来凑数）</p></li><li><p>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F1921890%2F&amp;query=JavaScript+dom%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">JavaScript DOM编程艺术</a>』（入门书，忘了讲的是啥了，还不错）</p></li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F10546125%2F&amp;query=JavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1&amp;cat_id=1001&amp;type=search&amp;pos=1" target="_blank" rel="external">JavaScript高级程序设计（第3版） </a>』（S+级书，每次看都有新发现，期待第四版）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F2208550%2F&amp;query=CSS%E5%AE%9E%E6%88%98%E6%89%8B%E5%86%8C&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">CSS实战手册</a>』（从工程角度入门的CSS书，还介绍了圣杯布局什么的，不错）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F1898098%2F&amp;query=%E7%B2%BE%E9%80%9ACSS&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">精通CSS</a>』（然而我CSS依旧很渣）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F2228378%2F&amp;query=JavaScript%E6%9D%83%E5%A8%81%E6%8C%87%E5%8D%97&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">JavaScript权威指南</a>』（S+级字典书，很吼很强大，有时间一定要仔细看完）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F3590768%2F&amp;query=JavaScript%E8%AF%AD%E8%A8%80%E7%B2%BE%E7%B2%B9&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">JavaScript语言精粹</a>』（讲道理，好多东西已经过时了）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F25786138%2F&amp;query=Effective+JavaScript&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">Effective JavaScript</a>』（不错，有些东西过时但是依旧有用）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F5362856%2F&amp;query=%E9%AB%98%E6%80%A7%E8%83%BDJavaScript&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">高性能JavaScript </a>』（好书，有时间还得再重温一次）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F27106846%2F&amp;query=%E9%AB%98%E6%80%A7%E8%83%BD%E5%93%8D%E5%BA%94%E5%BC%8FWeb%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">高性能响应式Web开发实战</a>』（很好的一本书，性能优化加响应式适配）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F27072230%2F&amp;query=%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3ES6&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">深入理解ES6</a>』（Zakas大神的书，和阮老师的ES6教程搭配服用效果更好）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F26918038%2F&amp;query=%E6%B7%B1%E5%85%A5React%E6%8A%80%E6%9C%AF%E6%A0%88&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">深入React技术栈</a>』（基本是公认的关于React书的巅峰之作，还在看）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F27033213%2F&amp;query=%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BAReact%E5%92%8CRedux&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">深入浅出React和Redux</a>』（程墨大大的书，讲道理如果上来看上边那书，就是React从入门到放弃了）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F3794471%2F&amp;query=%E9%94%8B%E5%88%A9%E7%9A%84jQuery&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">锋利的jQuery</a>』（看了几章没看了，想了一下还是等用深入用jQuery的时候再现看比较好）</li><li>『<a href="https://www.douban.com/link2/?url=https%3A%2F%2Fbook.douban.com%2Fsubject%2F21792530%2F&amp;query=%E7%BC%96%E5%86%99%E5%8F%AF%E7%BB%B4%E6%8A%A4%E7%9A%84JavaScript&amp;cat_id=1001&amp;type=search&amp;pos=0" target="_blank" rel="external">编写可维护的JavaScript</a>』（还在看，很多规矩，manners make man）</li></ol><p>这么看，这一年还是看了不少书，明年再接再厉吧<del>少年</del>中年人。</p><h2 id="实况踢起tika-taka啊"><a href="#实况踢起tika-taka啊" class="headerlink" title="实况踢起tika-taka啊"></a>实况踢起tika-taka啊</h2><p>这一年基本上没怎么玩过游戏，好像是2月份在大家毕业前玩了几把DotA就再也没碰过了，王者荣耀也一点没有想玩的欲望，大部分娱乐的时间都用来玩PES2017了，<del>实况头球</del>2017的引擎总算是能让人踢出正常的tika-taka+直塞了，不过我压根不会用巴萨来开档，斯坦福桥惨案之后坚定的对巴萨粉转黑。</p><p>用皇马玩了两个赛季，用阿森纳玩了半个赛季，买了伊瓜因作主力前锋，头顶脚踢都不在话下，手感一流，偷猎者属性抢点无敌，还能远射大力出奇迹。可惜年纪大了体力经常不够需要有人当替补，就买了卢卡库，成长好，硬又黑，无脑中路给头球。右后卫买了疯狗贝莱林，疯狗般的速度，疯狗般的成长，要是在阿森纳也能有这水准就好了。前腰这个位置在实况里一直吃力不讨好，买了丁丁我也踢不好，后来把丁丁换成右中前卫好了点。中场还有拉姆塞，体力🐶，用起来非常舒服。最让人惊喜的就是托马斯穆勒了，本身我就很喜欢这个球员，用穆勒打虚假跑位的SS，助攻进球抢点什么都能做，体力值还高，开档必买，不过我用阿森纳开档就买了穆勒踢了半个赛季，这哥死活无法续约，心疼小破厂，在游戏里都被欺负（逃）。</p><p>希望明年能踢得更好，期待PES2018。</p><h2 id="看了一些球啊"><a href="#看了一些球啊" class="headerlink" title="看了一些球啊"></a>看了一些球啊</h2><p>这一年比较意外的是看的球还不少，大部分时间都是在<del>听</del>看英超，看完还会去刷刷知乎，看看大神们是从什么角度分析的，某个回答里有一句印象很深刻的话，大概是</p><blockquote><p>『我们仰望梅西，那是神的水准</p><p>​    所以我们会像C罗一样勤奋</p><p>​    但最后，我们会发现和自己最像的，是鲁尼』</p></blockquote><p>明年的🇷🇺世界杯，支持一记🇧🇪。</p><h2 id="2018"><a href="#2018" class="headerlink" title="2018"></a>2018</h2><p>希望，在2018，实现，所有，自己，想要的。</p><p>最后引用「恶毒梁欢秀」里的一句话结尾：</p><blockquote><p> 2017——操你妈。</p><p> 新的一年，让我们更主动一点。</p><p> 2018，在这里提前，操你妈。</p></blockquote><p>来吧，2018。</p><p><br></p><p><br></p><p><br></p><p>对了，</p><p>2017年我还是没有猫，希望2018年能有。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;写什么年记啊&quot;&gt;&lt;a href=&quot;#写什么年记啊&quot; class=&quot;headerlink&quot; title=&quot;写什么年记啊&quot;&gt;&lt;/a&gt;写什么年记啊&lt;/h2&gt;&lt;p&gt;前些年的时候，大概是在两年前，有一天突发奇想打算写日记，记录自己每天的感悟，希望自己以后能回顾心路历程，经过
+      
+    
+    </summary>
+    
+    
+      <category term="生活" scheme="https://fi3ework.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>弱渣的常用git命令</title>
     <link href="https://fi3ework.github.io/2017-12-11/git-gist/"/>
     <id>https://fi3ework.github.io/2017-12-11/git-gist/</id>
     <published>2017-12-11T13:23:36.000Z</published>
-    <updated>2017-12-12T13:16:58.151Z</updated>
+    <updated>2017-12-31T17:44:27.311Z</updated>
     
-    <content type="html"><![CDATA[<p>作为一个基本上只会push和pull的还依赖于SourceTree的git弱渣，随手记录一下自己使用过的git命令，让自己以后找起来更方便🙄</p><ul><li><strong>修正最后一个 commit 消息</strong></li></ul><p><strong>场景：</strong>你在最后一条 commit 消息里有个笔误，已经执行了 <code>git commit -m &quot;Fxies bug #42&quot;，但在</code> <code>git push</code> 之前你意识到消息应该是 “Fixes bug #42″。</p><p><strong>方法:</strong> <code>git commit --amend</code> 或 <code>git commit --amend -m &quot;Fixes bug #42&quot;</code></p><p><strong>原理:</strong> <code>git commit --amend</code> 会用一个新的 commit 更新并替换最近的 commit ，这个新的 commit 会把任何修改内容和上一个 commit 的内容结合起来。如果当前没有提出任何修改，这个操作就只会把上次的 commit 消息重写一遍。</p><ul><li><strong>撤销最后一个commit</strong></li></ul><p><strong>场景：</strong>在完成了一次本地commit之后，对这次commit不是十分满意，想要撤销这条commit记录</p><p><strong>方法：</strong><code>git reset &lt;last good SHA&gt;</code> 或 <code>git reset --hard &lt;last good SHA&gt;</code></p><p><strong>原理：</strong><code>git reset</code> 会把你的代码库历史返回到指定的 SHA 状态。 这样就像是这些提交从来没有发生过。缺省情况下，撤销的commit的修改的代码将会恢复到工作区，对应的commit的记录被撤销掉。如果加了<code>--hard</code>，那么撤销的commit的代码也会消失掉。</p><ul><li><strong>合并远端新建的的分支</strong><ul><li><a href="http://blog.csdn.net/lindexi_gd/article/details/52554159" target="_blank" rel="external">http://blog.csdn.net/lindexi_gd/article/details/52554159</a></li><li><a href="https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories" target="_blank" rel="external">https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories</a></li></ul></li></ul>]]></content>
+    <content type="html"><![CDATA[<p>作为一个基本上只会push和pull的还依赖于SourceTree的git弱渣，随手记录一下自己使用过的git命令，让自己以后找起来更方便🙄</p><ul><li><strong>修正最后一个 commit 消息</strong></li></ul><p><strong>场景：</strong>你在最后一条 commit 消息里有个笔误，已经执行了 <code>git commit -m &quot;Fxies bug #42&quot;，但在</code> <code>git push</code> 之前你意识到消息应该是 “Fixes bug #42″。</p><p><strong>方法:</strong> <code>git commit --amend</code> 或 <code>git commit --amend -m &quot;Fixes bug #42&quot;</code></p><p><strong>原理:</strong> <code>git commit --amend</code> 会用一个新的 commit 更新并替换最近的 commit ，这个新的 commit 会把任何修改内容和上一个 commit 的内容结合起来。如果当前没有提出任何修改，这个操作就只会把上次的 commit 消息重写一遍。</p><ul><li><strong>撤销最后一个commit</strong></li></ul><p><strong>场景：</strong>在完成了一次本地commit之后，对这次commit不是十分满意，想要撤销这条commit记录</p><p><strong>方法：</strong><code>git reset &lt;last good SHA&gt;</code> 或 <code>git reset --hard &lt;last good SHA&gt;</code></p><p><strong>原理：</strong><code>git reset</code> 会把你的代码库历史返回到指定的 SHA 状态。 这样就像是这些提交从来没有发生过。缺省情况下，撤销的commit的修改的代码将会恢复到工作区，对应的commit的记录被撤销掉。如果加了<code>--hard</code>，那么撤销的commit的代码也会消失掉。如果想一并撤销远端的提交，使用<code>git push origin master --force</code>或者<code>git push -f origin master</code>即可，sourceTree里也有开启force push的选项。</p><p><strong>参考：</strong><a href="https://stackoverflow.com/questions/10510462/force-git-push-to-overwrite-remote-files" target="_blank" rel="external">Force “git push” to overwrite remote files</a></p><ul><li><strong>合并远端新建的的分支</strong><ul><li><a href="http://blog.csdn.net/lindexi_gd/article/details/52554159" target="_blank" rel="external">http://blog.csdn.net/lindexi_gd/article/details/52554159</a></li><li><a href="https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories" target="_blank" rel="external">https://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories</a></li></ul></li></ul>]]></content>
     
     <summary type="html">
     
@@ -62,9 +85,9 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="https://fi3ework.github.io/tags/JavaScript/"/>
-    
       <category term="React" scheme="https://fi3ework.github.io/tags/React/"/>
+    
+      <category term="JavaScript" scheme="https://fi3ework.github.io/tags/JavaScript/"/>
     
   </entry>
   
@@ -87,9 +110,9 @@
     </summary>
     
     
-      <category term="JavaScript" scheme="https://fi3ework.github.io/tags/JavaScript/"/>
-    
       <category term="React" scheme="https://fi3ework.github.io/tags/React/"/>
+    
+      <category term="JavaScript" scheme="https://fi3ework.github.io/tags/JavaScript/"/>
     
       <category term="ESLint" scheme="https://fi3ework.github.io/tags/ESLint/"/>
     
