@@ -211,7 +211,8 @@
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="简明React-Router-v4教程"><a href="#简明React-Router-v4教程" class="headerlink" title="简明React Router v4教程"></a>简明React Router v4教程</h1><p>React Router v4是一个完全使用React重写的流行的React包，之前版本的React Router配置是使用伪组件也很晦涩难懂。现在使用v4版本的React Router，所有的东西都“仅仅是组件”。</p>
+        <p>翻译自<a href="https://medium.com/@pshrmn/a-simple-react-router-v4-tutorial-7f23ff27adf" target="_blank" rel="external">A Simple React Router v4 Tutorial</a></p>
+<h1 id="简明React-Router-v4教程"><a href="#简明React-Router-v4教程" class="headerlink" title="简明React Router v4教程"></a>简明React Router v4教程</h1><p>React Router v4是一个完全使用React重写的流行的React包，之前版本的React Router配置是使用伪组件也很晦涩难懂。现在使用v4版本的React Router，所有的东西都“仅仅是组件”。</p>
 <p>在这个教程中，我们将建立一个本地的运动队，我们将完成所有的基本需求来建立我们的网站和路由，这包括：</p>
 <ol>
 <li>选择<code>router</code></li>
@@ -306,15 +307,15 @@
 <p>[4] 相对的<code>&lt;Link&gt;</code>s更加复杂，他们因为可能需要父组件的<code>match</code>对象，而不是当前的URL。</p>
 <p>[5] 这是个基本的无状态组件，<code>component</code>和<code>render</code>的区别是，<code>component</code>会使用<code>React.createElement</code>来创建一个元素，<code>render</code>使用函数来生成组件，如果你想创建一个需要传递prop的组件，那么<code>render</code>会比<code>component</code>来的方便。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;Route path=<span class="string">'/one'</span> component=&#123;One&#125;/&gt;</div><div class="line"><span class="comment">// React.createElement(props.component)</span></div><div class="line">&lt;Route path=<span class="string">'/two'</span> render=&#123;() =&gt; &lt;Two /&gt;&#125;/&gt;</div><div class="line">// props.render()</div></pre></td></tr></table></figure>
-<p>[6] <code>&lt;Route&gt;</code>和<code>&lt;Switch&gt;</code>组件都可以接受一个<code>location</code> prop，这可以</p>
-<p>[7] </p>
+<p>[6] <code>&lt;Route&gt;</code>和<code>&lt;Switch&gt;</code>组件都可以接受一个<code>location</code> prop，这可以让他们被一个不同的location匹配到，而不仅仅是他们实际的location（当前的URL）</p>
+<p>[7] <code>react-router</code>也可以传递<code>staticContext</code>这个prop，但是只在使用服务端渲染的时候有效。</p>
 
     </article>
     <!-- 前后页  -->
     <ul class="post-pager">
         
             <li class="next">
-                <a href= "/2017-11-08/HOC/" title= 基于Decorator的React高阶组件的思路分析与实现 >
+                <a href= "/2017-11-08/react-HOC/" title= 基于Decorator的React高阶组件的思路分析与实现 >
                     <span>Next Post</span>
                     <span>基于Decorator的React高阶组件的思路分析与实现</span>
                 </a>
@@ -609,12 +610,51 @@
     
     
     
-    <div class="total-archive"> Total : 18 </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-archive"> Total : 20 </div>
     
     <div class="post-archive">
     
     
     
+    
+    <div class="archive-year"> 2018 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/12</span><a class="archive-post-title" href= "/2018-01-12/debug-webpack-with-vscode/" >使用VSCode调试Webpack</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">01/12</span><a class="archive-post-title" href= "/2018-01-12/npm-notes/" >关于npm随手记录的知识点</a>
+        </li>
+    
+    
+    
+    
+    
+        </ul>
     
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
@@ -641,7 +681,7 @@
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">11/08</span><a class="archive-post-title" href= "/2017-11-08/HOC/" >基于Decorator的React高阶组件的思路分析与实现</a>
+            <span class="archive-post-date">11/08</span><a class="archive-post-title" href= "/2017-11-08/react-HOC/" >基于Decorator的React高阶组件的思路分析与实现</a>
         </li>
     
     
@@ -716,29 +756,35 @@
     
         <span class="sidebar-tag-name"><a href= "#">生活</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">React</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
-    
         <span class="sidebar-tag-name"><a href= "#">JavaScript</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">Ajax</a></span>
     
-        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
+        <span class="sidebar-tag-name"><a href= "#">React</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">CSS</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">读书</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">HTML5</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">SASS</a></span>
     
+        <span class="sidebar-tag-name"><a href= "#">VSCode</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Webpack</a></span>
+    
         <span class="sidebar-tag-name"><a href= "#">ESLint</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">Hexo</a></span>
-    
-        <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">hexo</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">hexo-theme-archer</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">npm</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">Hexo</a></span>
+    
+        <span class="sidebar-tag-name"><a href= "#">环境配置</a></span>
     
         <span class="sidebar-tag-name"><a href= "#">浏览器</a></span>
     
