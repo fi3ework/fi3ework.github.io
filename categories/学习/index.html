@@ -301,26 +301,60 @@
     
     
         <article class="index-post">
-            <a class="abstract-title" href = "/2017-02-05/使用githubHexo搭建个人博客/" >
+            <a class="abstract-title" href = "/2017-06-09/CSS常用布局方式/" >
                 
-                    <span>使用github+Hexo搭建个人博客</span>
+                    <span>CSS常用布局方式</span>
             </a>
             <div class="abstract-content">
-                引言之前一直使用CSDN Blog来写博客，但是对于一个颜控来说CSDN的界面实在是有点丑陋😏，就转头了GitHub Pages，配合Hexo搭建完成。在这个博客的第一篇博文就记录一下这个博客是如何搭建成的好了。
-正文本博客搭建的方法参考 GitHub Pages + Hexo搭建博客，在这里对原作者表示感谢。原作者的方案有一点是很好的，就是在原仓库username.github.io.git中再开一条hexo分支来管理hexo的部署，这样即使不在常用的电脑身边也可以管理博客，而且在hexo init之后路径下会自动生成.gitignore文件，其本意也就是鼓励我们使用GitHub来进...
+                高度相等的列  
+  思路：三列浮动布局，给每列一个很大的padding-bottom，然后每列的margin-bottom比padding-bottom稍小，外面包裹的wrapper就会被最高的一列撑起来。
+  代码：
+  12345678910111213.box &#123;  width: 250px;  margin-left: 20px;  float: left;  padding: 10px;  background-color: orange;  padding-bottom: 520px;  margin-bottom: -500px;&#125;.wrapper &...
             </div>
             <div class="abstract-post-meta">
                 <!-- date  -->
                 <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/02/05</span>
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/09</span>
+                </div>
+                <!-- tags  -->
+                
+            </div>
+        </article>
+    
+    
+    
+        <article class="index-post">
+            <a class="abstract-title" href = "/2017-06-07/CSS TIPS/" >
+                
+                    <span>CSS TIPS</span>
+            </a>
+            <div class="abstract-content">
+                html
+当网页中的内容较少时，html元素可能无法覆盖整个浏览器的高度，通过设置
+123html&#123;  height: 100%;&#125;
+即可将整个页面撑开到浏览器的高度。
+
+
+CSS高速缓存
+CSS被缓存之后，可以通过如下方法，使之前的缓存失效
+1&lt;link rel="sytlesheet" type="text/css" href="main.css?v=1"&gt;
+只要每次更新样式表的时候v=后面的数字不同，就可以下载新的样式表了。
+
+
+@import的缺点
+在IE678中，import会被link阻塞，无法并行加载。
+1234&lt;link rel='s...
+            </div>
+            <div class="abstract-post-meta">
+                <!-- date  -->
+                <div class="abstract-date">
+                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/06/07</span>
                 </div>
                 <!-- tags  -->
                 
                 <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = Hexo>Hexo</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = 环境配置>环境配置</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = CSS>CSS</a>
     
 </div>
                 
@@ -328,10 +362,6 @@
         </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <a class="extend prev" rel="prev" href="/archives/page/2/">&#60; PREV</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
-    </nav>
     
 </main>
             <!-- profile -->
