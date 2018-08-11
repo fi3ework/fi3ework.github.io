@@ -5,10 +5,16 @@
 
 
 
-
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" >
+    <meta name="author" content="Wee">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="Wee">
+    <meta name="keywords" content="firework's Studio | Wee">
+    <meta name="description" content="">
+    <meta name="Cache-Control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <title>fi3ework&#39;s Studio</title>
     <style type="text/css">
     @font-face {
@@ -34,9 +40,8 @@
         position: relative;
         z-index: 3;
         width: 100%;
-        height: 50vh;
+        /* height: 50vh; */
         overflow: hidden;
-        box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.7);
     }
 
     .site-intro-placeholder {
@@ -63,20 +68,174 @@
 
 </style>
 
-    <link rel="preload" href= /css/style.css?v=20180203 as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" type="text/css" href= /css/mobile.css?v=20180203 media="(max-width: 980px)"/>
-    <link rel="icon" href= //assets/favicon.ico>
-    <script>
-  // load webfont-loader async, and add callback function
-  function async(u, c) {
-    var d = document, t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-    s.parentNode.insertBefore(o, s);
-  }
-  
+    <link rel="preload" href= /css/style.css?v=20180721 as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="stylesheet" href= /css/mobile.css?v=20180721 media="(max-width: 980px)">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href= "/assets/favicon.ico" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script" />
+    <link rel="preload" href="/scripts/main.js" as="script" />
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <a class="home-link" href=/>fi3ework's Studio.</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style=
+
+
+
+
+
+
+
+
+>
+    
+    <!-- 主页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+    </div>
+</div>
+        <script>
+ 
   // get user agent
   var browser = {
     versions: function () {
@@ -106,13 +265,9 @@
     if (document.getElementsByClassName('site-intro-meta')) {
       document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
       document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
-      var postIntroTags = document.getElementsByClassName('post-intro-tags')[0],
-        postIntroMeat = document.getElementsByClassName('post-intro-meta')[0];
-      if (postIntroTags) {
-        postIntroTags.classList.add('post-fade-in');
-      }
-      if (postIntroMeat) {
-        postIntroMeat.classList.add('post-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
       }
     }
   }
@@ -142,486 +297,79 @@
     }
   }
 
-  async("https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", asyncCb)
-</script>
-    <script>
-        (function (w) {
-            "use strict";
-            // rel=preload support test
-            if (!w.loadCSS) {
-                w.loadCSS = function () { };
-            }
-            // define on the loadCSS obj
-            var rp = loadCSS.relpreload = {};
-            // rel=preload feature support test
-            // runs once and returns a function for compat purposes
-            rp.support = (function () {
-                var ret;
-                try {
-                    ret = w.document.createElement("link").relList.supports("preload");
-                } catch (e) {
-                    ret = false;
-                }
-                return function () {
-                    return ret;
-                };
-            })();
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
 
-            // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-            // then change that media back to its intended value on load
-            rp.bindMediaToggle = function (link) {
-                // remember existing media attr for ultimate state, or default to 'all'
-                var finalMedia = link.media || "all";
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
 
-                function enableStylesheet() {
-                    link.media = finalMedia;
-                }
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
 
-                // bind load handlers to enable media
-                if (link.addEventListener) {
-                    link.addEventListener("load", enableStylesheet);
-                } else if (link.attachEvent) {
-                    link.attachEvent("onload", enableStylesheet);
-                }
+      async(arr[0], success, currReject)
+  }
 
-                // Set rel and non-applicable media type to start an async request
-                // note: timeout allows this to happen async to let rendering continue in IE
-                setTimeout(function () {
-                    link.rel = "stylesheet";
-                    link.media = "only x";
-                });
-                // also enable media after 3 seconds,
-                // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-                setTimeout(enableStylesheet, 3000);
-            };
-
-            // loop through link elements in DOM
-            rp.poly = function () {
-                // double check this to prevent external calls from running
-                if (rp.support()) {
-                    return;
-                }
-                var links = w.document.getElementsByTagName("link");
-                for (var i = 0; i < links.length; i++) {
-                    var link = links[i];
-                    // qualify links to those with rel=preload and as=style attrs
-                    if (link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")) {
-                        // prevent rerunning on link
-                        link.setAttribute("data-loadcss", true);
-                        // bind listeners to toggle media back
-                        rp.bindMediaToggle(link);
-                    }
-                }
-            };
-
-            // if unsupported, run the polyfill
-            if (!rp.support()) {
-                // run once at least
-                rp.poly();
-
-                // rerun poly on an interval until onload
-                var run = w.setInterval(rp.poly, 500);
-                if (w.addEventListener) {
-                    w.addEventListener("load", function () {
-                        rp.poly();
-                        w.clearInterval(run);
-                    });
-                } else if (w.attachEvent) {
-                    w.attachEvent("onload", function () {
-                        rp.poly();
-                        w.clearInterval(run);
-                    });
-                }
-            }
-            // commonjs
-            if (typeof exports !== "undefined") {
-                exports.loadCSS = loadCSS;
-            }
-            else {
-                w.loadCSS = loadCSS;
-            }
-        }(typeof global !== "undefined" ? global : this));
-    </script>
-    <script src="//cdn.staticfile.org/jquery/3.2.1/jquery.min.js" defer></script>
-    
-    <script src="/scripts/main.js" defer></script>
-    <!-- 百度统计  -->
-    
-    <script>
-        var _hmt = _hmt || [];
-        (function () {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?https://hm.baidu.com/hm.js?c2e692c5407f95609121a9d80bd24510";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
-    
-    <!-- 谷歌统计  -->
-    
-</head>
-
-    
-    
-<header class="header">
-
-    <div class="read-progress"></div>
-    <div class="header-sidebar-menu">&#xe775;</div>
-    <!-- post页的toggle banner  -->
-    
-    <a class="home-link" href=/>fi3ework's Studio.</a>
-</header>
-    <div class="wrapper">
-        <div class="site-intro">
-    
-    <!-- 主页  -->
-            
-    <div class="site-intro-img" style="background-image: url(/)"></div>
-    <div class="site-intro-placeholder"></div>
-    <div class="site-intro-meta">
-        <!-- 标题  -->
-        <h1 class="intro-title">
-            <!-- 主页  -->
-            
-        </h1>
-        <!-- 副标题 -->
-        <p class="intro-subtitle">
-            <!-- 主页副标题  -->
-            
-        </p>
-        <!-- 文章页meta -->
-        
-    </div>
-</div>
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
-
         <div class="container container-unloaded">
             <main class="main index-page">
     
     
     
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018-01-28/fout/" >
+    
+    
+    
+    <article class="index-post">
+        <a class="abstract-title" href = "/2017-08-14/hexo-theme-archer/" >
+            
+                <span class="stick-top iconfont-archer">&#xe63d;</span>
                 
-                    <span>[Untitled Post]</span>
-            </a>
-            <div class="abstract-content">
-                
+                <span>hexo-theme-archer</span>
+        </a>
+        <div class="abstract-content">
+            <p><img src="/2017-08-14/hexo-theme-archer/snap.png" alt="preview"></p>
+<p>安装及使用方法见GitHub地址: <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank" rel="noopener">戳我:)</a></p>
+<h2 id="帮助"><a href="#帮助" class="headerlink" title="帮助"></a>帮助</h2><p>如果有任何使用上的问题或者疑问，欢迎留言</p>
+<p>感谢使用😆</p>
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/08/14</span>
             </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/28</span>
-                </div>
-                <!-- tags  -->
-                
-            </div>
-        </article>
+            <!-- tags  -->
+            
+            <div class= abstract-tags >
     
+        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
     
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018-01-12/debug-webpack-with-vscode/" >
-                
-                    <span>使用VSCode调试Webpack</span>
-            </a>
-            <div class="abstract-content">
-                目标使用VSCode来调试经过Webpack打包和Babel转义之后的代码。
-步骤准备工作
-安装Debugger for Chrome这个VSCode的插件
-Chrome
-
-操作
-新建一个launch.json，可参考此篇文章
-
-重点来了，如何配置launch.json
-先把我的配置放上来
-1234567891011121314151617181920212223&#123;  // 使用 IntelliSense 了解相关属性。   // 悬停以查看现有属性的描述。  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/12</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = VSCode>VSCode</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = Webpack>Webpack</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo-theme-archer">hexo-theme-archer</a>
     
 </div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2018-01-12/npm-notes/" >
-                
-                    <span>关于npm随手记录的知识点</span>
-            </a>
-            <div class="abstract-content">
-                
-NPM下的各个文件夹的含义
-
-dist: 用来放UMD版本的文件
-lib: 是package.json中的main指向的入口，使用npm就会调用这个文件夹
-src: 源码
-
-lib相比src唯一的作用就是使用babel和webpack进行了转码，因为大多数的build过程不会执行babel的转码，所以lib有更好的兼容性。
-Difference between lib and dist folders when packaging library using webpack?
-
-
-
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2018/01/12</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = npm>npm</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017-12-31/2017/" >
-                
-                    <span>to 2017</span>
-            </a>
-            <div class="abstract-content">
-                写什么年记啊前些年的时候，大概是在两年前，有一天突发奇想打算写日记，记录自己每天的感悟，希望自己以后能回顾心路历程，经过一番比较，花了30块在App Store买了One Day，Markdown语法，跨三端，不会被墙，简直完美。大概坚持了5天，我就把自己曾经买了这个应用的事情完全忘记了，留下了平均造价六块钱的五篇电子日记。
-然后我就发现我并不适合做写日记这么勤劳的事情，周记的频度也太高，月记的话倒是可行，不过估计也是会有月记不调。还是写年记吧，一方面是频度足够低，另一方面是人群都处于一种告别过去一年的状态，从众的心态很容易提醒我，又一年过去了，大家都在「别管快乐不快乐还是只是为了发个朋...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/31</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = 生活>生活</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017-12-11/git-gist/" >
-                
-                    <span>弱渣的常用git命令</span>
-            </a>
-            <div class="abstract-content">
-                作为一个基本上只会push和pull的还依赖于SourceTree的git弱渣，随手记录一下自己使用过的git命令，让自己以后找起来更方便🙄
-
-修正最后一个 commit 消息
-场景：你在最后一条 commit 消息里有个笔误，已经执行了 git commit -m &quot;Fxies bug #42&quot;，但在 git push 之前你意识到消息应该是 “Fixes bug #42″。
-方法: git commit --amend 或 git commit --amend -m &quot;Fixes bug #42&quot;
-原理: git commit --amend...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/11</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = git>git</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017-12-05/React中的转义字符/" >
-                
-                    <span>React中的HTML转义写法</span>
-            </a>
-            <div class="abstract-content">
-                在JSX中输出固定内容
-直接使用UTF-8字符
-1&lt;div&gt;版权 ©&lt;/div&gt;
-
-使用HTML转义字符
-1&lt;div&gt;版权 &amp;copy;&lt;/div&gt;
-或者十进制的转义字符
-1&lt;div&gt;版权 &amp;#169;&lt;/div&gt;
-
-
-动态内容的转义但是如果在外面加一层大括号的话，react为了防止xss会将转义后的字符实体再次转义
-
-React 会将所有要显示到 DOM 的字符串转义，防止 XSS。所以，如果 JSX 中含有转义后的实体字符，比如 &copy;（©），则最后 DOM 中不会正确显示，因为 React...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/05</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = React>React</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = JavaScript>JavaScript</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017-12-03/create-react-app-react-eslint/" >
-                
-                    <span>为eject后的create-react-app配置ESLint</span>
-            </a>
-            <div class="abstract-content">
-                问题项目一开始使用的是create-react-app创建的，配置的ESLint是用的AlloyTeam的eslint-config-alloy/react， 默认配置已经很合理了，并且每条配置都有相应的说明，只需要再根据个人喜好修改一些rule即可，我个人修改的.eslintrc.json配置如下
-123456789101112131415161718192021222324252627282930313233343536373839404142&#123;    "extends": [        "eslint-config-alloy/react"    ],    "glo...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/12/03</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = React>React</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = JavaScript>JavaScript</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = ESLint>ESLint</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017-11-08/react-HOC/" >
-                
-                    <span>基于Decorator的React高阶组件的思路分析与实现</span>
-            </a>
-            <div class="abstract-content">
-                在深入react 技术栈一书中，提到了基于Decorator的HOC。而不是直接通过父组件来逐层传递props，因为当业务逻辑越来越复杂的时候，props的传递和维护也将变得困难且冗余。
-书里对基于Decorator的HOC没有给出完整的实现，在这里实现并记录一下实现的思路。
-整个实现的代码放到了我的Github上，是用来获取豆瓣的电影列表的，npm start即可开箱。
-整体思路
-书里描述的整体思路，先将整个组件，按照view逻辑抽象为互不重叠的最小的原子组件，使组件间组合更自由。在这里最小的组件就是SearchInput SelectInput List。原子组件一定是纯粹的、木偶式...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/11/08</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = React>React</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017-10-28/A Simple React Router v4 Tutorial/" >
-                
-                    <span>简明React Router v4教程</span>
-            </a>
-            <div class="abstract-content">
-                翻译自A Simple React Router v4 Tutorial
-简明React Router v4教程React Router v4是一个完全使用React重写的流行的React包，之前版本的React Router配置是使用伪组件也很晦涩难懂。现在使用v4版本的React Router，所有的东西都“仅仅是组件”。
-在这个教程中，我们将建立一个本地的运动队，我们将完成所有的基本需求来建立我们的网站和路由，这包括：
-
-选择router
-创建routes
-在路由之间通过链接进行导航
-
-代码
-安装React Router现在已经被划分成了三个包：react-router，react...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/10/28</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = React>React</a>
-    
-</div>
-                
-            </div>
-        </article>
-    
-    
-    
-        <article class="index-post">
-            <a class="abstract-title" href = "/2017-10-27/redux to react-redux/" >
-                
-                    <span>Redux的工作流程教程</span>
-            </a>
-            <div class="abstract-content">
-                redux的工作流程
-使用createStore创建一个管理数据的store。
-1let store = createStore(reducer)
-store的实现：
-123456789101112131415161718192021222324const createStore = (reducer) =&gt; &#123;  let state;  let listeners = [];  const getState = () =&gt; state;  const dispatch = (action) =&gt; &#123;    state = reducer(state...
-            </div>
-            <div class="abstract-post-meta">
-                <!-- date  -->
-                <div class="abstract-date">
-                    <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2017/10/27</span>
-                </div>
-                <!-- tags  -->
-                
-                <div class= abstract-tags >
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = React>React</a>
-    
-</div>
-                
-            </div>
-        </article>
+            
+        </div>
+    </article>
     
     <!-- paginator  -->
-    
-    <nav class="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">NEXT &#62;</a>
-    </nav>
     
 </main>
             <!-- profile -->
@@ -635,13 +383,22 @@ store的实现：
     
         
             
-                <a href="mailto:805843200@qq.com" class="iconfont-archer email" title=email ></a>
+                <a href="mailto:12345@qq.com" class="iconfont-archer email" title=email ></a>
             
         
     
         
             
-                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title="github"></a>
+                <a href="//github.com/fi3ework" class="iconfont-archer github" target="_blank" title=github></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title=wechat>
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png" />
+                </span>
             
         
     
@@ -664,9 +421,15 @@ store的实现：
         
     
         
-            
-                <a href="/atom.xml" class="iconfont-archer rss" target="_blank" title="rss"></a>
-            
+    
+        
+    
+        
+    
+        
+    
+        
+    
         
     
 
@@ -679,8 +442,10 @@ store的实现：
     <!-- 不蒜子  -->
     
     <div class="busuanzi-container">
-        <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span>
-        </span>
+    
+     
+    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
+    
     </div>
     
 </footer>
@@ -708,344 +473,25 @@ store的实现：
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    <div class="total-archive"> Total : 21 </div>
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 1
+        </div>
+        <!-- search  -->
+        
+    </div>
     
     <div class="post-archive">
     
     
     
     
-    <div class="archive-year"> 2018 </div>
-    <ul class="year-list">
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/28</span><a class="archive-post-title" href= "/2018-01-28/fout/" >[Untitled Post]</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/12</span><a class="archive-post-title" href= "/2018-01-12/debug-webpack-with-vscode/" >使用VSCode调试Webpack</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">01/12</span><a class="archive-post-title" href= "/2018-01-12/npm-notes/" >关于npm随手记录的知识点</a>
-        </li>
-    
-    
-    
-    
-    
-        </ul>
-    
     <div class="archive-year"> 2017 </div>
     <ul class="year-list">
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">12/31</span><a class="archive-post-title" href= "/2017-12-31/2017/" >to 2017</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/11</span><a class="archive-post-title" href= "/2017-12-11/git-gist/" >弱渣的常用git命令</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/05</span><a class="archive-post-title" href= "/2017-12-05/React中的转义字符/" >React中的HTML转义写法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">12/03</span><a class="archive-post-title" href= "/2017-12-03/create-react-app-react-eslint/" >为eject后的create-react-app配置ESLint</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">11/08</span><a class="archive-post-title" href= "/2017-11-08/react-HOC/" >基于Decorator的React高阶组件的思路分析与实现</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/28</span><a class="archive-post-title" href= "/2017-10-28/A Simple React Router v4 Tutorial/" >简明React Router v4教程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/27</span><a class="archive-post-title" href= "/2017-10-27/redux to react-redux/" >Redux的工作流程教程</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">10/08</span><a class="archive-post-title" href= "/2017-10-08/页面生命周期：DOMContentLoaded, load, beforeunload, unload/" >页面生命周期：DOMContentLoaded, load, beforeunload, unload</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
             <span class="archive-post-date">08/14</span><a class="archive-post-title" href= "/2017-08-14/hexo-theme-archer/" >hexo-theme-archer</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/21</span><a class="archive-post-title" href= "/2017-06-21/client:scroll:offset width:height总结/" >client/scroll/offset width/height总结</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/19</span><a class="archive-post-title" href= "/2017-06-19/SASS的map/" >SASS的map</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/09</span><a class="archive-post-title" href= "/2017-06-09/CSS常用布局方式/" >CSS常用布局方式</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/07</span><a class="archive-post-title" href= "/2017-06-07/CSS TIPS/" >CSS TIPS</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">06/06</span><a class="archive-post-title" href= "/2017-06-06/HTML5大纲及计算方法/" >HTML5大纲及计算方法</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">05/27</span><a class="archive-post-title" href= "/2017-05-27/AJAX跨域请求分析/" >AJAX跨域请求分析</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">04/30</span><a class="archive-post-title" href= "/2017-04-30/JavaScript高程3笔记/" >JavaScript高程3笔记</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/07</span><a class="archive-post-title" href= "/2017-02-07/float理解/" >CSS中的float和clear</a>
-        </li>
-    
-    
-        <li class="archive-post-item">
-            <span class="archive-post-date">02/05</span><a class="archive-post-title" href= "/2017-02-05/使用githubHexo搭建个人博客/" >使用github+Hexo搭建个人博客</a>
         </li>
     
     </div>
@@ -1053,41 +499,9 @@ store的实现：
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="生活"><span class="iconfont-archer">&#xe606;</span>生活</span>
-    
-        <span class="sidebar-tag-name" data-tags="React"><span class="iconfont-archer">&#xe606;</span>React</span>
-    
-        <span class="sidebar-tag-name" data-tags="JavaScript"><span class="iconfont-archer">&#xe606;</span>JavaScript</span>
-    
-        <span class="sidebar-tag-name" data-tags="Ajax"><span class="iconfont-archer">&#xe606;</span>Ajax</span>
-    
-        <span class="sidebar-tag-name" data-tags="CSS"><span class="iconfont-archer">&#xe606;</span>CSS</span>
-    
-        <span class="sidebar-tag-name" data-tags="HTML5"><span class="iconfont-archer">&#xe606;</span>HTML5</span>
-    
-        <span class="sidebar-tag-name" data-tags="读书"><span class="iconfont-archer">&#xe606;</span>读书</span>
-    
-        <span class="sidebar-tag-name" data-tags="SASS"><span class="iconfont-archer">&#xe606;</span>SASS</span>
-    
-        <span class="sidebar-tag-name" data-tags="ESLint"><span class="iconfont-archer">&#xe606;</span>ESLint</span>
-    
-        <span class="sidebar-tag-name" data-tags="VSCode"><span class="iconfont-archer">&#xe606;</span>VSCode</span>
-    
-        <span class="sidebar-tag-name" data-tags="Webpack"><span class="iconfont-archer">&#xe606;</span>Webpack</span>
-    
-        <span class="sidebar-tag-name" data-tags="git"><span class="iconfont-archer">&#xe606;</span>git</span>
-    
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="hexo-theme-archer"><span class="iconfont-archer">&#xe606;</span>hexo-theme-archer</span>
-    
-        <span class="sidebar-tag-name" data-tags="npm"><span class="iconfont-archer">&#xe606;</span>npm</span>
-    
-        <span class="sidebar-tag-name" data-tags="Hexo"><span class="iconfont-archer">&#xe606;</span>Hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="环境配置"><span class="iconfont-archer">&#xe606;</span>环境配置</span>
-    
-        <span class="sidebar-tag-name" data-tags="浏览器"><span class="iconfont-archer">&#xe606;</span>浏览器</span>
     
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -1122,12 +536,6 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="生活"><span class="iconfont-archer">&#xe60a;</span>生活</span>
-    
-        <span class="sidebar-category-name" data-categories="学习"><span class="iconfont-archer">&#xe60a;</span>学习</span>
-    
-        <span class="sidebar-category-name" data-categories="生活/2017"><span class="iconfont-archer">&#xe60a;</span>生活/2017</span>
-    
     </div>
     <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
     <div class="sidebar-categories-list"></div>
@@ -1135,17 +543,32 @@ jsonContent:
     </div>
 </div> 
     <script>
-    var jsInfo = {
-        root: '/'
+    var siteMeta = {
+        root: "/",
+        author: "Wee"
     }
 </script>
-    <!-- 不蒜子  -->
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
     
     <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
-    <!-- CNZZ统计  -->
+    <!-- CNZZ  -->
     
     </div>
+    <!-- async load share.js -->
+     
     </body>
 </html>
 
